@@ -9,7 +9,7 @@
 
 <br />
 <div align="center">
-  <img src="teaser/teaser.png" alt="Logo">
+  <img src="docs/teaser/teaser.png" alt="Logo">
 
   <h1 align="center">ViddeoGen-Eval 1.0</h1>
 
@@ -102,9 +102,9 @@ Yuhang Yang - [yyuhang@mail.ustc.edu.cn](mailto:yyuhang@mail.ustc.edu.cn)
 
 ## Citation
 
-```
+<!-- ```
 
-```
+``` -->
 
 
 
