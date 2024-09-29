@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoGen-Eval</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span></span> VideoGen-Eval v1.0
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Technical Report</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Contact</a>
+                    <div class="dropdown-content">
+                        <a href="mailto:ailingzengzzz@gmail.com">Ailing Zeng</a>
+                        <a href="mailto:yyuhang@mail.ustc.edu.cn">Yuhang Yang</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Download</a>
+                    <div class="dropdown-content">
+                        <a href="#">Google</a>
+                        <a href="#">Baidu</a>
+                    </div>
+                </li>
+                <li><a href="specifc_model/prompt.html">Prompt</a></li>
+                <li><a href="https://github.com/AILab-CVC/VideoGen-Eval">Github</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h1 class="main-title">The Dawn of Video Generation: Preliminary Explorations with SORA-like Models</h1>
+        <div class="authors">
+            <p>
+                <span class="author"><a href="https://ailingzeng.site/" target="_blank">Ailing Zeng</a><sup>1</sup></span>,
+                <span class="author"><a href="https://yyvhang.github.io/" target="_blank">Yuhang Yang</a><sup>2</sup></span>,
+                <span class="author"><a href="" target="_blank">Weidong Chen</a><sup>1</sup></span>,
+                <span class="author"><a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ&hl=en" target="_blank">Wei Liu</a><sup>1</sup></span>
+            </p>
+        </div>
+        <div class="affiliations">
+            <p><sup>1</sup>Tencent, AI Lab, <sup>2</sup>USTC</p>
+        </div>
+
+        <div class="description-section">
+            <p class="main-description">
+                To observe and compare the video quality of recent generative video models, we open all the evaluation results with over 700 designed prompts from:
+            </p>
+            <ul class="description-list">
+                <li>Vertical-domain applications, such as human-centric animation and robotics, etc.;</li>
+                <li>Key objective capabilities, such as text alignment, motion diversity, composition, stability, etc.;</li>
+                <li>Eleven application scenarios, such as film, advertisment, anime, etc.;</li>
+                <li>Challenges and future directions, such as complex motion, interaction, concept understanding, etc.;</li>
+            </ul>
+        </div>
+
+        <img src="./teaser/teaser.png" alt="Teaser Image" style="max-width: 100%; height: auto;">
+        
+        <div class="footnote-info">
+        <h2 class="model-results-title">Compare all model videos: </h2>
+            <p>On the main page, we concatenate the video results from multiple models for comparison.</p> 
+                <p>   The input text prompts are listed below the video (Index-Task: Prompt). Notably, you can download all results from this link.</p>
+        </div>
+        <div class="category-buttons">
+            <a href="#text-to-video" class="category-button">Text-to-Video</a>
+            <a href="#image-to-video" class="category-button">Image-to-Video</a>
+            <a href="#video-to-video" class="category-button">Video-to-Video</a>
+        </div>
+
+        <div class="footnote-info"></div>
+        <h2 class="model-results-title">Check separate model videos: </h2>
+            <p>We will continue to update the results with model releases and version updates.</p>
+        </div>
+        <div class="model-links">
+            <a href="specifc_model/gen3/gen3.html">Gen-3 (Aug.~Sep.)</a>
+            <a href="specifc_model/kling/kling.html">Kling v1.0 (Aug.~Sep.)</a>
+            <a href="specifc_model/kling1.5/kling1.5.html">Kling v1.5 (Sep.)</a>
+            <a href="specifc_model/vidu/vidu.html">Vidu (Aug.~Sep.)</a>
+            <a href="specifc_model/luma/luma.html">Luma v1.0(Aug.~Sep.)</a>
+            <a href="specifc_model/luma1.6/luma1.6.html">Luma v1.6 (Sep.)</a>
+            <a href="specifc_model/minimax/minimax.html">Hailuo (Sep.)</a>
+            <a href="specifc_model/qingying/qingying.html">QingYing (Sep.)</a>
+            <a href="specifc_model/tongyi/tongyi.html">TongYi (Sep.)</a>
+        </div>
+    </section>
+
+    <section id="text-to-video">
+        <h1>Text-to-Video</h1>
+        <div class="projects-container" id="gallery1">
+            <div class="projects">
+            </div>
+        </div>
+    </section>
+
+    <section id="image-to-video">
+        <h1>Image-to-Video</h1>
+        <div class="projects-container" id="gallery2">
+            <div class="projects">
+            </div>
+        </div>
+    </section>
+
+    <section id="video-to-video">
+        <h1>Video-to-Video</h1>
+        <div class="projects-container" id="gallery3">
+            <div class="projects">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>If there are any results that you would like to showcase, feel free to reach out to:</p>
+        <ul class="contact-list">
+            <li><a href="mailto:ailingzengzzz@gmail.com">Ailing Zeng</a></li>
+            <li><a href="mailto:yyuhang@mail.ustc.edu.cn">Yuhang Yang</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="footer-section">
+            <ul>
+                <li>VideoGen-Eval</li>
+            </ul>
+            <script async src="https://api.ly522.com/js/jilei.pure.mini.js"></script>
+            <span id="jilei_container_site_pv">Total number of visits: <span id="jilei_value_site_pv">
+        </div>
+        <!-- <div class="footer-section">
+            <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Facebook</a></li>
+            </ul>
+        </div> -->
+        <!-- <div class="footer-bottom">
+            <p>© 2035 by Business Name. Made with ❤️</p>
+        </div> -->
+    </footer>
+
+    <script src="js/gallery.js"></script>
+</body>
+</html>

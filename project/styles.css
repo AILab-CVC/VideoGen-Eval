@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+
+:root {
+    --primary-color: #10a37f;
+    --secondary-color: #c5c5d2;
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --dark-gray: #202123;
+    --light-gray: #353740;
+    /* 添加一个新的颜色变量 */
+    --light-yellow: #fff2b2;  /* 这是一个浅鹅黄色，你可以根据需要调整 */
+    --primary-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+body {
+    font-family: var(--primary-font);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: saturate(180%) blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--text-color);  /* 假设 --text-color 是白色 */
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.logo span {
+    color: var(--primary-color);  /* 保持圆点的颜色为主色调 */
+    margin-right: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.intro {
+    max-width: 800px;
+    margin: 8rem auto 6rem;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 2.5rem;  /* 从之前的 3.5rem 减小 */
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.authors {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--light-yellow);
+}
+
+.affiliations {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.category-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--background-color);  /* 假设背景色是深色 */
+    background-color: var(--text-color);  /* 假设文本色是白色 */
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.category-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .category-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-button {
+        width: 80%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.model-results-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 4rem 0 2rem;
+}
+
+.model-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 4rem;
+}
+
+.model-links a {
+    padding: 0.5rem 1rem;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.model-links a:hover {
+    background-color: var(--dark-gray);
+}
+
+.description-section {
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    text-align: left;
+    color: var(--text-color);
+    padding: 0 1rem;
+}
+
+.main-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.description-list {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    list-style-type: disc;
+}
+
+.description-list li {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.footnote-info {
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+}
+
+.footnote-info h2.model-results-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.footnote-info p {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+#text-to-video, #image-to-video, #video-to-video {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+#text-to-video h1, #image-to-video h1, #video-to-video h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+
+
+.contact-section {
+    background-color: var(--dark-gray);
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 1rem;
+}
+
+.contact-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--dark-gray);
+    color: var(--secondary-color);
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.author a {
+    color: var(--light-yellow);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.author a:hover {
+    opacity: 0.8;  /* 悬停时略微降低不透明度 */
+}
+
+.author sup {
+    color: var(--secondary-color);  /* 上标数字可以保持原来的颜色以区分 */
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2rem;  /* 在移动设备上进一步减小 */
+    }
+
+    .category-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .category-button {
+        width: 80%;
+        text-align: center;
+    }
+
+    .model-links {
+        flex-direction: column;
+    }
+
+    .authors {
+        font-size: 0.8rem;
+    }
+
+    .description-section {
+        padding: 0 0.5rem;
+    }
+
+    .main-description {
+        font-size: 0.85rem;
+    }
+
+    .description-list li {
+        font-size: 0.8rem;
+    }
+}
+
+.separate-models-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.model-results-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.update-info {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.model-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.model-links a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.model-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .separate-models-section {
+        padding: 0 1rem;
+    }
+
+    .model-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .model-links a {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+.layout-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.layout-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.layout-button.active {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+.layout-button:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.layout-button:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* .layout-1-video .projects {
+    width: 100%;
+} */
+
+.layout-3-video .projects {
+    width: calc(33.333% - 1rem);
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .layout-3-video .projects {
+        width: 100%;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* .title-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background-image: url('./teaser/teaser2.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.title-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.main-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+} */
+
+.teaser-image {
+    margin: 20px 0;
+    text-align: center;
+}
