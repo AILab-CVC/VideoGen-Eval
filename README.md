@@ -11,7 +11,7 @@
 <div align="center">
   <img src="docs/teaser/teaser.png" alt="Logo">
 
-  <h1 align="center">ViddeoGen-Eval 1.0</h1>
+  <h1 align="center">VideoGen-Eval 1.0</h1>
 
   <p align="center">
     To observe and compare the video quality of recent video generative models!
@@ -32,7 +32,7 @@
 </div>
 
 ## Project Updates
-- 🔥 **News**: ```2024/9/30```: VideoGen-Eval-1.0 is available, please check the [Project Page]() and [Technical Report]() for more details.
+- 🔥 **News**: ```2024/10/07```: VideoGen-Eval-1.0 is available, please check the [Project Page]() and [Technical Report]() for more details.
 
 <!-- TABLE OF CONTENTS -->
 <details>
