@@ -18,7 +18,7 @@
     <br />
     <a href="https://ailingzeng.site/">Ailing Zeng</a>
     ·
-    <a href="https://yyvhang.github.io/">Yuahng Yang</a>
+    <a href="https://yyvhang.github.io/">Yuhang Yang</a>
     ·
     <a href="">Weidong Chen</a>
     ·
@@ -53,17 +53,20 @@
 </details>
 
 ## About The Project
+High-quality video generation, such as text-to-video (T2V), image-to-video (I2V), and video-to-video (V2V) generation, holds considerable significance in content creation and world simulation. Models like SORA have advanced generating videos with higher resolution, more natural motion, better vision-language alignment, and increased controllability, particularly for long video sequences. These improvements have been driven by the evolution of model architectures, shifting from UNet to more scalable and parameter-rich DiT models, along with large-scale data expansion and refined training strategies. However, despite the emergence of several DiT-based closed-source and open-source models, a comprehensive investigation into their capabilities and limitations still needs to be completed. Additionally, existing evaluation metrics often fail to align with human preferences.
 
-Recently, models like SORA have advanced generating videos with higher resolution, more natural motion, better vision-language alignment, and increased controllability, particularly for long video sequences. However, despite the emergence of several DiT-based closed-source and open-source models, a comprehensive investigation into their capabilities and limitations remains lacking, creating a noticeablegap between academic research and industry practice. To bridge the existing gap and provide a more profound analysis of recent video generation advancements. In specific, we devise over **700** critical prompts and presenting more than **8,000** cases from closed-source and several open-source models. We systematically examines:
+This report v1.0 studies a series of SORA-like T2V, I2V, and V2V models via to bridge the gap between academic research and industry practice and provide a more profound analysis of recent video generation advancements. This is achieved by demonstrating and comparing over 8,000 generated video cases from **ten closed-source and several open-source models** (Kling 1.0, Kling 1.5, Gen-3, Luma 1.0, Luma 1.6, Vidu, Qingying, MiniMax Hailuo, Tongyi Wanxiang, Pika1.5) via our 700 critical prompts. Seeing is believing. We encourage readers to visit our [Website]() to browse these results online. Our study systematically examines four core aspects: 
 
-* Impacts on vertical-domain application models;
-* Key objective capabilities of video generation models;
-* Video generation across eleven application scenarios;
-* In-depth discussions on challenges and future research issues showcasing a wealth of qualitative comparisons.
+* Impacts on vertical-domain application models, such as human-centric animation and robotics;
+* Key objective capabilities, such as text alignment, motion diversity, composition, stability, etc.;
+* Video generation across eleven real-life application scenarios;
+* In-depth discussions on potential usage scenarios and tasks, challenges, and future work.
+
+All the results are publicly accessible, and we will continuously update the results as new models are released and existing ones undergo version updates. 
 
 ## Assets
 
-The inputs we utilized, including text, images, videos, and the generated results of all models, are open for download: [Google Drive](), [Baidu](https://pan.baidu.com/s/1K0O162lQObjcmO6d9uqffQ?pwd=hqcn). You can also visit the [Website]() to browse these results. We encourage researchers to use our test results for comparison and analysis in specific tasks.
+The inputs we introduced, including the input text, images, videos, and the generated results of all models, are available for download at [Google Drive]() and [Baidu](https://pan.baidu.com/s/1K0O162lQObjcmO6d9uqffQ?pwd=hqcn). You can also visit our [Website]() to browse these results online.  
 
 ## Job List
 
@@ -73,7 +76,7 @@ The inputs we utilized, including text, images, videos, and the generated result
 
 <!-- CONTRIBUTING -->
 ## Contributing
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Welcome all contributions! If you have a suggestion to improve this project, please fork the repo and create a pull request. You can also open an issue with the tag "enhancement."
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
