@@ -41,7 +41,7 @@
 <body>
     <main>
         <h1>All the prompts</h1>
-        <button id="downloadBtn">Download</button>
+        <button id="downloadBtn"> <a href="https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/prompts.xlsx">Download</a></button>
         <div id="excelData"></div>
     </main>
 
@@ -49,7 +49,7 @@
         fetch('./prompts.xlsx')
             .then(response => response.arrayBuffer())
             .then(data => {
-                const workbook = XLSX.read(data, {type: 'array'});
+                workbook = XLSX.read(data, {type: 'array'});
                 const firstSheetName = workbook.SheetNames[0];
                 const worksheet = workbook.Sheets[firstSheetName];
 
@@ -97,6 +97,19 @@
                     table.className = 'excel-table';
                 }
             });
+
+    function downloadExcel() {
+        if (workbook) {
+            const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+            const data = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+            const url = URL.createObjectURL(data);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/prompts.xlsx';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+    }
     </script>
 </body>
 </html>

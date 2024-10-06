@@ -2828,7 +2828,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ]
 
-    // 使用Intersection Observer实现懒加载
     const lazyLoadVideo = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
