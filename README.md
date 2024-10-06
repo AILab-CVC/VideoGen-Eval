@@ -24,9 +24,11 @@
     ·
     <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ&hl=en">Wei Liu</a>
     <br />
-    <a href="">Project Page</a>
+    <a href="https://ailab-cvc.github.io/VideoGen-Eval/">Project Page</a>
     ·
     <a href="">Technical Report</a>
+    ·
+    <a href="https://ailab-cvc.github.io/docs/specific_model/wechat.md">Join Wechat</a>
     <p><sub>*Equal contribution</sub></p>
 
   </p>
