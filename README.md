@@ -28,7 +28,7 @@
     ·
     <a href="">Technical Report</a>
     ·
-    <a href="https://ailab-cvc.github.io/docs/specific_model/wechat.md">Join Wechat</a>
+    <a href="https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/wechat.md">Join Wechat</a>
     <p><sub>*Equal contribution</sub></p>
 
   </p>
