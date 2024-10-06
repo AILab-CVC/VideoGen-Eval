@@ -71,7 +71,7 @@ We assign an ID to each case, and the input text, the names of input images and 
 
 ## Assets
 
-The inputs we introduced, including the input text, images, videos, and the generated results of all models, are available for download at [Google Drive](https://drive.google.com/drive/folders/11WxQudsVgqI-ETXQB5PQjd7dzhz41-E0?usp=sharing) and [Baidu](https://pan.baidu.com/s/16nhiiKIYn3EPRMpefEoEqw?pwd=rgha). You can also visit our [Website]() to browse these results online.  
+The inputs we introduced, including the input text, images, videos, and the generated results of all models, are available for download at [Google Drive](https://drive.google.com/drive/folders/11WxQudsVgqI-ETXQB5PQjd7dzhz41-E0?usp=sharing) and [Baidu](https://pan.baidu.com/s/16nhiiKIYn3EPRMpefEoEqw?pwd=rgha). You can also visit our [Website](https://ailab-cvc.github.io/VideoGen-Eval/) to browse these results online.  
 
 ## Job List
 
