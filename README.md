@@ -61,7 +61,7 @@ This report v1.0 studies a series of SORA-like T2V, I2V, and V2V models via to b
 
 * Impacts on vertical-domain application models, such as human-centric animation and robotics;
 * Key objective capabilities, such as text alignment, motion diversity, composition, stability, etc.;
-* Video generation across eleven real-life application scenarios;
+* Video generation across ten real-life application scenarios;
 * In-depth discussions on potential usage scenarios and tasks, challenges, and future work.
 
 
