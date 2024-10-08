@@ -33,7 +33,7 @@
 
 
 ## 🔥 Project Updates
--  **News**: ```2024/10/08```: VideoGen-Eval-1.0 is available, please check the [Project Page](https://ailab-cvc.github.io/VideoGen-Eval/) and [Technical Report]() for more details.
+-  **News**: ```2024/10/08```: VideoGen-Eval-1.0 is available, please check the [Project Page](https://ailab-cvc.github.io/VideoGen-Eval/) and [Technical Report](http://arxiv.org/abs/2410.05227) for more details.
 
 <!-- TABLE OF CONTENTS -->
 <details>
