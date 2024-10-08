@@ -115,11 +115,6 @@ Yuhang Yang - [yyuhang@mail.ustc.edu.cn](mailto:yyuhang@mail.ustc.edu.cn)
   year={2024}
 }
 ```
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/AILab-CVC/VideoGen-Eval.svg?style=for-the-badge
 [contributors-url]: https://github.com/AILab-CVC/VideoGen-Eval/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/AILab-CVC/VideoGen-Eval.svg?style=for-the-badge
