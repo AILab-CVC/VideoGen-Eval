@@ -919,6 +919,30 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/tongyi/i2v/tongyi_00720.mp4",
             "description": "720-I2V: In this medium shot video, a woman is enveloped in a vibrant haze of colorful smoke, in a warm, ethereal light."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/tongyi/i2v/tongyi_00724.mp4",
+            "description": "724-I2V: Inflate it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/tongyi/i2v/tongyi_00725.mp4",
+            "description": "725-I2V: Melt it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/tongyi/i2v/tongyi_00726.mp4",
+            "description": "726-I2V: Explode it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/tongyi/i2v/tongyi_00727.mp4",
+            "description": "727-I2V: Squish it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/tongyi/i2v/tongyi_00728.mp4",
+            "description": "728-I2V: Crush it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/tongyi/i2v/tongyi_00729.mp4",
+            "description": "729-I2V: Cake-ify it"
         }
     ]
     
@@ -2422,6 +2446,10 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/tongyi/t2v/tongyi_00719.mp4",
             "description": "719-T2V: A wide shot high resolution 3D model render of a grey couch against a white background."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/tongyi/t2v/tongyi_00721.mp4",
+            "description": "721-T2V: A mermaid swims in the sea, with her upper body and fish tail in a beautiful and exquisite style"
         }
     ]
 

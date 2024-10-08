@@ -903,6 +903,30 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/luma1.6/i2v/luma1.6_00720.mp4",
             "description": "720-I2V: In this medium shot video, a woman is enveloped in a vibrant haze of colorful smoke, in a warm, ethereal light."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/luma1.6/i2v/luma1.6_00724.mp4",
+            "description": "724-I2V: Inflate it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/luma1.6/i2v/luma1.6_00725.mp4",
+            "description": "725-I2V: Melt it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/luma1.6/i2v/luma1.6_00726.mp4",
+            "description": "726-I2V: Explode it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/luma1.6/i2v/luma1.6_00727.mp4",
+            "description": "727-I2V: Squish it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/luma1.6/i2v/luma1.6_00728.mp4",
+            "description": "728-I2V: Crush it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/luma1.6/i2v/luma1.6_00729.mp4",
+            "description": "729-I2V: Cake-ify it"
         }
     ]
     
@@ -2530,6 +2554,10 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/luma1.6/t2v/luma1.6_00668.mp4",
             "description": "668-T2V: The camera remains still, a woman with long black hair and wearing a green sweater walks towards the sofa in the living room and sits on it after reaching it, the background is a modern living room, warm ambient lighting."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/luma1.6/t2v/luma1.6_00719.mp4",
+            "description": "719-T2V: A wide shot high resolution 3D model render of a grey couch against a white background."
         }
     ]
 

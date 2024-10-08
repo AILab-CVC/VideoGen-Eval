@@ -13,7 +13,7 @@
 
   <h1 align="center">VideoGen-Eval 1.0</h1>
   
-#### [<code>Project Page 🚀</code>](https://ailab-cvc.github.io/VideoGen-Eval/) | [<code>Technical Report 📝</code>]()  | [<code>Prompt 🎬</code>](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/prompt.html)  | [<code>Video Download 🤩</code>](https://drive.google.com/drive/folders/11WxQudsVgqI-ETXQB5PQjd7dzhz41-E0?usp=sharing) | [<code>Join WeChat 💬</code>](https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/wechat.md)
+#### [<code>Project Page 🚀</code>](https://ailab-cvc.github.io/VideoGen-Eval/) | [<code>Technical Report 📝</code>](http://arxiv.org/abs/2410.05227)  | [<code>Prompt 🎬</code>](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/prompt.html)  | [<code>Video Download 🤩</code>](https://drive.google.com/drive/folders/11WxQudsVgqI-ETXQB5PQjd7dzhz41-E0?usp=sharing) | [<code>Join WeChat 💬</code>](https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/wechat.md)
 
   <p align="center">
     To observe and compare the video quality of recent video generative models!
@@ -27,15 +27,13 @@
     <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ&hl=en">Wei Liu<sup>1</sup></a>
     <br />
     <p> <sub><sup>1</sup> Tencent AI Lab, <sup>2</sup> USTC. *Equal contribution</sub></p>
-
-
   </p>
 </div>
 
 
 
 ## 🔥 Project Updates
--  **News**: ```2024/10/07```: VideoGen-Eval-1.0 is available, please check the [Project Page](https://ailab-cvc.github.io/VideoGen-Eval/) and [Technical Report]() for more details.
+-  **News**: ```2024/10/08```: VideoGen-Eval-1.0 is available, please check the [Project Page](https://ailab-cvc.github.io/VideoGen-Eval/) and [Technical Report]() for more details.
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -76,7 +74,7 @@ The inputs we introduced, including the input text, images, videos, and the gene
 ## 🦉 Job List
 
 - [x] VideoGen-Eval-1.0 released 
-- [ ] Add results of Seaweed, PixelDance, and MiracleVision.
+- [ ] Add results of Seaweed, PixelDance, MovieGen, and MiracleVision.
 - [ ] Make the arena for video generation models.
 
 <!-- CONTRIBUTING -->

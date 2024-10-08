@@ -967,7 +967,32 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling1.5/I2V/kling1.5_00720.mp4",
             "description": "720-I2V: In this medium shot video, a woman is enveloped in a vibrant haze of colorful smoke, in a warm, ethereal light."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling1.5/I2V/kling1.5_00724.mp4",
+            "description": "724-I2V: Inflate it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling1.5/I2V/kling1.5_00725.mp4",
+            "description": "725-I2V: Melt it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling1.5/I2V/kling1.5_00726.mp4",
+            "description": "726-I2V: Explode it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling1.5/I2V/kling1.5_00727.mp4",
+            "description": "727-I2V: Squish it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling1.5/I2V/kling1.5_00728.mp4",
+            "description": "728-I2V: Crush it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling1.5/I2V/kling1.5_00729.mp4",
+            "description": "729-I2V: Cake-ify it"
         }
+
     ]
     
     const videos_t2v = [
@@ -2478,6 +2503,10 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling1.5/T2V/kling1.5_00719.mp4",
             "description": "719-T2V: A wide shot high resolution 3D model render of a grey couch against a white background."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling1.5/T2V/kling1.5_00721.mp4",
+            "description": "721-T2V: A mermaid swims in the sea, with her upper body and fish tail in a beautiful and exquisite style"
         }
     ]
 

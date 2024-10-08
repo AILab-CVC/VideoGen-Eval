@@ -983,6 +983,14 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling/i2v/kling_00667.mp4",
             "description": "667-I2V: the person stands up from the chair"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling/i2v/kling_00718.mp4",
+            "description": "718-I2V: Generative Visual Effects (GVFX) , A cinematic flames on the wall"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling/i2v/kling_00720.mp4",
+            "description": "720-I2V: In this medium shot video, a woman is enveloped in a vibrant haze of colorful smoke, in a warm, ethereal light."
         }
     ]
     
@@ -2646,6 +2654,14 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling/t2v/kling_00668.mp4",
             "description": "668-T2V: The camera remains still, a woman with long black hair and wearing a green sweater walks towards the sofa in the living room and sits on it after reaching it, the background is a modern living room, warm ambient lighting."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling/t2v/kling_00719.mp4",
+            "description": "719-T2V: A wide shot high resolution 3D model render of a grey couch against a white background."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/kling/t2v/kling_00721.mp4",
+            "description": "721-T2V: A mermaid swims in the sea, with her upper body and fish tail in a beautiful and exquisite style"
         }
     ]
 

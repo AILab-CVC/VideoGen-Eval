@@ -1669,6 +1669,10 @@ document.addEventListener("DOMContentLoaded", () => {
             "description": "666-T2V: a man sits on a steel chair and then stands up from the chair"
         },
         {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/t2v/minimax_00719.mp4",
+            "description": "719-T2V: A wide shot high resolution 3D model render of a grey couch against a white background."
+        },
+        {
             "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/t2v/minimax_00721.mp4",
             "description": "721-T2V: A mermaid swims in the sea, with her upper body and fish tail in a beautiful and exquisite style"
         }
