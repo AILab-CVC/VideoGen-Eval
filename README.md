@@ -107,10 +107,14 @@ Ailing Zeng - [ailingzengzzz@gmail.com](mailto:ailingzengzzz@gmail.com)
 Yuhang Yang - [yyuhang@mail.ustc.edu.cn](mailto:yyuhang@mail.ustc.edu.cn)
 
 ## 💌 Citation
-
-<!-- ```
-
-``` -->
+```
+@article{zeng2024videogeneval,
+  title={The Dawn of Video Generation: Preliminary Explorations with SORA-like Models},
+  author={Zeng, Ailing and Yang, Yuhang and Chen, Weidong and Liu, Wei},
+  journal={arXiv preprint arXiv:2410.05227},
+  year={2024}
+}
+```
 
 
 
