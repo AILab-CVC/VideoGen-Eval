@@ -33,6 +33,7 @@
 
 
 ## 🔥 Project Updates
+-  **News**: ```2024/10/14```: We update results of Minimax I2V, please check [Minimax](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/minimax/minimax.html).
 -  **News**: ```2024/10/08```: VideoGen-Eval-1.0 is available, please check the [Project Page](https://ailab-cvc.github.io/VideoGen-Eval/) and [Technical Report](http://arxiv.org/abs/2410.05227) for more details.
 
 <!-- TABLE OF CONTENTS -->

@@ -1,4 +1,1019 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const videos_i2v = [
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00000.mp4",
+            "description": "0-I2V: The camera remains still, the boy waves the baseball bat and knocks the baseball away."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00001.mp4",
+            "description": "1-I2V: The camera remains still, the right hand lifts the faucet switch and let the water flow down."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00002.mp4",
+            "description": "2-I2V: The camera remains still, the left hand turns off the faucet, and the water will stop flowing down."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00003.mp4",
+            "description": "3-I2V: The camera remains still, this person smashes the laptop with the hammer in his hands."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00004.mp4",
+            "description": "4-I2V: The camera remains still, this man blew air into the balloon."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00005.mp4",
+            "description": "5-I2V: The camera remains still, a hand reaching out to pull the chain of a lampshade, turning the lamp off."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00006.mp4",
+            "description": "6-I2V: The camera remains still, the man throws the basketball."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00007.mp4",
+            "description": "7-I2V: The camera remains still, the hand place the cup under the faucet to contain water."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00008.mp4",
+            "description": "8-I2V: The woman throws the cup in her left hand to the ground, and the camera follows the movement of the cup."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00009.mp4",
+            "description": "9-I2V: The camera remains still, the woman swings the tennis racket and knocks the tennis ball away."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00010.mp4",
+            "description": "10-I2V: The camera remains still, the man walks up to the front of the chair and sits on it."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00011.mp4",
+            "description": "11-I2V: The camera remains still, the man walks up to the front of the chair and sits on it."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00012.mp4",
+            "description": "12-I2V: The camera remains still, the woman reaches out her right hand and picks up the mug on the table."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00013.mp4",
+            "description": "13-I2V: The camera remains still, the man picks up the glasses on the table with his right hand."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00014.mp4",
+            "description": "14-I2V: The camera remains still, the man walks towards the bed and lies down on it."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00015.mp4",
+            "description": "15-I2V: The camera remains still, the woman grasps the scissor to cut the red line."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00016.mp4",
+            "description": "16-I2V: The camera remains still, the man is riding the bicycle forward."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00018.mp4",
+            "description": "18-I2V: The camera remains still, the man pours soup from the bowl."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00019.mp4",
+            "description": "19-I2V: The camera remains still, the woman uses the broom to clean the ground."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00020.mp4",
+            "description": "20-I2V: The camera remains still, the woman uses the mop to clean the ground from left to right."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00021.mp4",
+            "description": "21-I2V: The camera remains still, the human picks up food with a fork by hand."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00022.mp4",
+            "description": "22-I2V: The camera remains still, the woman picks up food with the chopsticks by hand."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00023.mp4",
+            "description": "23-I2V: The camera remains still, the woman grasps the knife to cut food."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00024.mp4",
+            "description": "24-I2V: The camera remains still, the man is riding the motorcycle forward."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00025.mp4",
+            "description": "25-I2V: The camera remains still, the man is carrying a wrapped chair up the stairs."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00026.mp4",
+            "description": "26-I2V: The camera remains still, the woman is sitting upright in an office chair."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00027.mp4",
+            "description": "27-I2V: The camera remains still, the man is holding up the bucket and pouring things from it."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00028.mp4",
+            "description": "28-I2V: The camera remains still, the man is pouring hot water from a kettle into a coffee dripper."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00029.mp4",
+            "description": "29-I2V: The camera remains still, the person is about to lift the lid off a stainless steel kettle."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00030.mp4",
+            "description": "30-I2V: The camera remains still, the man is holding a wooden bucket and walking towards."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00031.mp4",
+            "description": "31-I2V: The camera remains still, the man is cuting the cake with a knife."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00032.mp4",
+            "description": "32-I2V: The camera remains still, the woman is about to stab the cake with a knife."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00033.mp4",
+            "description": "33-I2V: The camera remains still, the man is walking along the shore carrying his surfboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00034.mp4",
+            "description": "34-I2V: The camera remains still, the man is surfing on a wave with his surfboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00035.mp4",
+            "description": "35-I2V: The camera remains still, the man is balancing a soccer ball on his forehead."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00036.mp4",
+            "description": "36-I2V: The camera remains still, the man is walking while carrying a backpack."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00037.mp4",
+            "description": "37-I2V: The camera remains still, the cyclist is riding a bicycle up a mountain road."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00038.mp4",
+            "description": "38-I2V: The camera remains still, the man is listening music with his headphone and shaking his heads."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00039.mp4",
+            "description": "39-I2V: The camera remains still, the woman is hula hooping outdoors."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00040.mp4",
+            "description": "40-I2V: The camera remains still, the man is kicking a soccer ball on the field."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00041.mp4",
+            "description": "41-I2V: The camera remains still, the construction worker is carrying a ladder on his shoulder."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00042.mp4",
+            "description": "42-I2V: The camera remains still, the motorcyclists are racing on a track."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00043.mp4",
+            "description": "43-I2V: The camera remains still, the man is riding a skateboard down the street."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00044.mp4",
+            "description": "44-I2V: The camera remains still, the surfer is riding a wave on his surfboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00045.mp4",
+            "description": "45-I2V: The camera remains still, the girl is taking off her sunglasses."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00046.mp4",
+            "description": "46-I2V: The camera remains still, the woman is walking while lifting a handbag."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00047.mp4",
+            "description": "47-I2V: The camera remains still, the baseball player is swing the baseballbat."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00048.mp4",
+            "description": "48-I2V: The camera remains still, the woman holds a coffee cup and walks towards."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00049.mp4",
+            "description": "49-I2V: The camera remains still, the woman places the bowl on the table with her hands."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00050.mp4",
+            "description": "50-I2V: The camera remains still, the man is carrying a chair with both hands across the street."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00051.mp4",
+            "description": "51-I2V: The camera remains still, the man is playing an acoustic guitar."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00052.mp4",
+            "description": "52-I2V: The camera remains still, the man is using a hammer to hit the chisel."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00053.mp4",
+            "description": "53-I2V: The camera remains still, the girl is taking off her hat."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00054.mp4",
+            "description": "54-I2V: The camera remains still, the woman uses her right hand to raise up the mug."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00055.mp4",
+            "description": "55-I2V: The camera remains still, the woman uses her both hands to move a table."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00056.mp4",
+            "description": "56-I2V: The camera remains still, the woman is brushing her teeth with a toothbrush."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00057.mp4",
+            "description": "57-I2V: The camera remains still, the woman is sweeping the floor with a broom."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00058.mp4",
+            "description": "58-I2V: The camera remains still, the person is using a fork to stab the meal served in a banana leaf."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00059.mp4",
+            "description": "59-I2V: The camera remains still, the woman is mopping the floor."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00060.mp4",
+            "description": "60-I2V: The camera remains still, a person holds a spoon in his right hand to serve food."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00061.mp4",
+            "description": "61-I2V: The camera remains still, the girl is carrying a bucket while smiling and walking towards."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00062.mp4",
+            "description": "62-I2V: The camera remains still, the woman is pulling a suitcase while walking down a street."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00063.mp4",
+            "description": "63-I2V: The camera remains still, the man is playing tennis, about to hit the ball with his racket."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00064.mp4",
+            "description": "64-I2V: The camera remains still, the man is holding an umbrella while walking in the rain."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00065.mp4",
+            "description": "65-I2V: The camera remains still, the woman is opening a kitchen cabinet."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00066.mp4",
+            "description": "66-I2V: The camera remains still, the woman is opening an oven door."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00067.mp4",
+            "description": "67-I2V: The camera remains still, the woman is pulling the oven door with her hands."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00068.mp4",
+            "description": "68-I2V: The camera remains still, the person is opening the door of a microwave."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00069.mp4",
+            "description": "69-I2V: The camera remains still, the man is opening the door of the storage cabinet."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00070.mp4",
+            "description": "70-I2V: The camera remains still, the hand is pulling the drawer."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00071.mp4",
+            "description": "71-I2V: The camera remains still, the woman is closing the refrigerator door."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00072.mp4",
+            "description": "72-I2V: The camera remains still, the child grasp the scissor and cuts paper."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00073.mp4",
+            "description": "73-I2V: The camera remains still, the person is rolling up a yoga mat."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00074.mp4",
+            "description": "74-I2V: The camera remains still, the girl folds the paper airplane in her hand."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00075.mp4",
+            "description": "75-I2V: The camera remains still, the woman is folding laundry with her hands."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00076.mp4",
+            "description": "76-I2V: The camera remains still, the woman folds the pants in her hand."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00077.mp4",
+            "description": "77-I2V: The camera remains still, the woman is flipping through the book in her hand."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00078.mp4",
+            "description": "78-I2V: The camera remains still, this person is holding the oar and rowing vigorously."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00079.mp4",
+            "description": "79-I2V: The camera remains still, the man quickly and violently waves the sword in his hand."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00080.mp4",
+            "description": "80-I2V: The camera remains still, the human is typing on a keyboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00081.mp4",
+            "description": "81-I2V: The camera remains still, the human is typing on a keyboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00082.mp4",
+            "description": "82-I2V: The camera remains still, the human is typing on a keyboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00083.mp4",
+            "description": "83-I2V: The camera remains still, the human is typing on a keyboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00084.mp4",
+            "description": "84-I2V: The camera remains still, the human is typing on a keyboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00085.mp4",
+            "description": "85-I2V: The camera remains still, the human is slicing food with a knife."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00086.mp4",
+            "description": "86-I2V: The camera remains still, the human is slicing food with a knife."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00087.mp4",
+            "description": "87-I2V: The camera remains still, the human is slicing food with a knife."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00088.mp4",
+            "description": "88-I2V: The camera remains still, the human is slicing food with a knife."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00089.mp4",
+            "description": "89-I2V: The camera remains still, the human is slicing food with a knife."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00090.mp4",
+            "description": "90-I2V: The camera remains still, the human is skateboarding."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00091.mp4",
+            "description": "91-I2V: The camera remains still, the human is skateboarding."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00092.mp4",
+            "description": "92-I2V: The camera remains still, the human is skateboarding."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00093.mp4",
+            "description": "93-I2V: The camera remains still, the human is skateboarding."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00094.mp4",
+            "description": "94-I2V: The camera remains still, the human is skateboarding."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00095.mp4",
+            "description": "95-I2V: The camera remains still, the human is surfing on a wave with the surfboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00096.mp4",
+            "description": "96-I2V: The camera remains still, the human is surfing on a wave with the surfboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00097.mp4",
+            "description": "97-I2V: The camera remains still, the human is surfing on a wave with the surfboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00098.mp4",
+            "description": "98-I2V: The camera remains still, the human is surfing on a wave with the surfboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00099.mp4",
+            "description": "99-I2V: The camera remains still, the human is surfing on a wave with the surfboard."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00100.mp4",
+            "description": "100-I2V: Static camera, the left hand turns off the faucet."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00101.mp4",
+            "description": "101-I2V: Static camera, pull down this wire with the hand to light up the desk lamp."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00104.mp4",
+            "description": "104-I2V: Static camera, the person smashes the laptop with the hammer in his hands."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00105.mp4",
+            "description": "105-I2V: Static camera, the man blew air into the balloon."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00106.mp4",
+            "description": "106-I2V: Static camera, this woman is pouring water into the cup on the table."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00107.mp4",
+            "description": "107-I2V: Static camera, this person is holding the oar and rowing vigorously."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00108.mp4",
+            "description": "108-I2V: Static camera, the woman is hula hooping outdoors."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00109.mp4",
+            "description": "109-I2V: Static camera, the woman is pulling open the oven door with her hands."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00110.mp4",
+            "description": "110-I2V: Static camera, the person is rolling up a yoga mat."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00111.mp4",
+            "description": "111-I2V: Static camera, the man walks up to the front of the chair and sits on it."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00112.mp4",
+            "description": "112-I2V: Static camera, the man picks up the glasses on the table with his right hand."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00116.mp4",
+            "description": "116-I2V: Static camera, the robotic arm uses its gripper to move the apple between the can and the orange."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00117.mp4",
+            "description": "117-I2V: Static camera, the robotic arm uses its gripper to pull out the drawer."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00118.mp4",
+            "description": "118-I2V: Static camera, the humanoid robot uses the robotic hand to grab the walnut on the table in front of it."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00139.mp4",
+            "description": "139-I2V: Static camera, the clouds are slowly drifting."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00140.mp4",
+            "description": "140-I2V: Static camera, the water from the waterfall hits the rocks, creating splashes of water."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00141.mp4",
+            "description": "141-I2V: Aerial shot, switch to the next scene from the front view to the aerial view."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00142.mp4",
+            "description": "142-I2V: Static camera, the sun gradually rises behind the mountain."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00143.mp4",
+            "description": "143-I2V: A FPV shot zooming through the scene."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00144.mp4",
+            "description": "144-I2V: Looking up, the sun appears within sight."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00145.mp4",
+            "description": "145-I2V: The video is a static medium shot of a woman with long black hair, wearing a white dress, sitting at a table and talking while holding a chopstick. The background features a wall with a red and black design and a silver teapot on the table."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00146.mp4",
+            "description": "146-I2V: The video is a medium shot of a young woman with dark hair and a brown dress reading a book in a sunny field. The camera remains static throughout the shot."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00147.mp4",
+            "description": "147-I2V: The video starts with a static, medium shot of a dimly lit room with a motorcycle helmet on the windowsill, then transitions to a shaky, aerial shot as someone picks up the helmet and looks out over the city at night. The video has a realistic style."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00148.mp4",
+            "description": "148-I2V: The video features a medium shot of a man in a dark superhero costume with a star on his chest, standing in a battle-scarred landscape. The camera remains static throughout the shot."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00149.mp4",
+            "description": "149-I2V: The camera remains static, providing a point-of-view shot through a telescopic sight as a high-speed train travels from right to left across the frame. The shot remains a medium shot throughout, focused on the moving train."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00150.mp4",
+            "description": "150-I2V: The video is a long shot depicting a soldier carefully traversing a bombed-out bridge over a canal in what appears to be a war-torn European city. As the soldier cautiously makes his way across the wreckage, a loud blast occurs, causing him to fall into the water below."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00151.mp4",
+            "description": "151-I2V: This video is a wide shot depicting a chaotic battle scene with many combatants, including humans, creatures, and flying vehicles, engaged in intense fighting. The camera pans right and tilts down, following the action as it unfolds."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00152.mp4",
+            "description": "152-I2V: The video shows a close-up shot of a young girl with short dark hair and a black choker. The camera remains static throughout the video, and the girl maintains a neutral expression with her head slightly turned to the right."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00153.mp4",
+            "description": "153-I2V: The video is a static, medium shot of a bag of espresso coffee beans and a white coffee cup being filled with coffee. As the coffee fills the cup, steam begins to rise."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00154.mp4",
+            "description": "154-I2V: The video features a static, close-up shot of a glass being filled with Coca-Cola. As the beverage is poured, the camera zooms into the glass, highlighting the carbonation and dark color of the cola."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00155.mp4",
+            "description": "155-I2V: The video starts with a long shot of a woman riding a horse on a hilltop, transitioning to an aerial shot as the horse runs down a dirt road. The video then cuts to a medium shot of the woman on the horse as she holds up a bottle of perfume, silhouetted against the setting sun over Los Angeles."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00156.mp4",
+            "description": "156-I2V: The video features a static, wide shot of a sleek, thin-bezeled Samsung LED TV set against a black background, initially showcasing a still image of the text \"LED TV\" before transitioning to display a vibrant scene of a hummingbird hovering near a flowering plant. As the camera circles around the TV, blue streaks of light emphasize its slim profile, culminating in a fade-out to black and the display of the Samsung logo and website address."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00157.mp4",
+            "description": "157-I2V: This is an animation video with a static camera and a medium shot. It shows a man and a woman dancing; the man attempts a dance move and falls to the ground."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00158.mp4",
+            "description": "158-I2V: This is an animated video, with a medium shot, showing a young woman wearing headphones and writing in a notebook at a desk. At the end of the video, someone's hand removes the headphones from the woman's head, and she looks up with a surprised expression."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00159.mp4",
+            "description": "159-I2V: This is an animated video showing a medium shot of a young girl with short brown hair wearing a green and white shirt. The girl is standing with her fists clenched and a frustrated expression, her face gradually becoming more sad and tearful."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00160.mp4",
+            "description": "160-I2V: The video takes a close-up shot showing two hands typing on a keyboard with Japanese characters. The camera remains static throughout the video."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00161.mp4",
+            "description": "161-I2V: This is an animated video, with a medium shot, showing a young boy with brown hair hungrily eating eggs and bacon off of a plate. The boy eats quickly and messily, getting food on his face."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00162.mp4",
+            "description": "162-I2V: This is an animation video. A medium shot follows a young man with dark hair as he runs urgently through a dark street, then the camera follows him as he leaps into the air."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00163.mp4",
+            "description": "163-I2V: This is an animation video with a static camera and a medium shot showing raindrops splashing in a puddle on the ground. The camera does not move, and the scene remains the same throughout the video."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00164.mp4",
+            "description": "164-I2V: This is an animated video with a long shot that pans up slowly from the base of a tall tower as a crow flies past. As the shot continues, the sky darkens, and it begins to rain."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00165.mp4",
+            "description": "165-I2V: The animation shows a plane flying through a simulated wind tunnel, with the camera following alongside as the tunnel narrows. The shot is a medium shot and remains static throughout the video."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00166.mp4",
+            "description": "166-I2V: The animation zooms in on a black hole distorting space-time, represented by a red grid, then transitions to a white dwarf star orbiting the black hole and losing its matter."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00167.mp4",
+            "description": "167-I2V: The camera provides an aerial view, zooming in on a 3D model of a volcano as a red area expands outwards from the peak. The video uses animation to depict the potential spread of a volcanic flow."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00168.mp4",
+            "description": "168-I2V: The video uses animation to depict a network of neurons firing and connecting with each other, resembling a galaxy with nebulae and stars. The camera remains static throughout the video."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00169.mp4",
+            "description": "169-I2V: The video starts with a long shot of a satellite against a backdrop of space and a bright light, then transitions to a close-up shot as the satellite rotates and reveals Jupiter in the background. The camera remains static throughout the video."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00170.mp4",
+            "description": "170-I2V: A close-up shot captures the car almost hitting a red car from a first-person perspective."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00171.mp4",
+            "description": "171-I2V: A close-up shot captures the car almost hitting a white car that changed lanes across the solid line on the right from a first-person perspective."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00172.mp4",
+            "description": "172-I2V: A close-up shot captures the car almost hitting a motorcycle carrying two people from a first-person perspective."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00173.mp4",
+            "description": "173-I2V: A close-up shot captures the car almost hitting a three-wheeled motorcycle crossing from left to right"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00174.mp4",
+            "description": "174-I2V: A close-up shot captures the car almost hitting the rear of a blue car from a first-person perspective."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00175.mp4",
+            "description": "175-I2V: A close-up shot captures the car almost hitting two women crossing from left to right"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00176.mp4",
+            "description": "176-I2V: A close-up shot captures the car almost hitting a man suddenly crossing from left to right"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00177.mp4",
+            "description": "177-I2V: A close-up shot captures the car almost hitting a black car from a first-person perspective."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00178.mp4",
+            "description": "178-I2V: The video is a long shot depicting a white humanoid robot running across a series of yellow platforms in a brightly lit indoor space. The camera remains static throughout the video."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00179.mp4",
+            "description": "179-I2V: The video is a static, medium shot of three small, toy robots on a table that make various expressions with their digital faces. The robots are stylized with an animation aesthetic."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00180.mp4",
+            "description": "180-I2V: A static, medium shot captures a robotic arm welding a metal plate, creating sparks and smoke. The robotic arm moves along the plate, creating a triangular shape with the weld."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00181.mp4",
+            "description": "181-I2V: The video is a close-up shot of a robot with a digital face as a young woman whispers in its ear. The robot's facial expression changes to reflect a smile as the girl speaks."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00182.mp4",
+            "description": "182-I2V: A gray robot dog jumps from one rock to another rock. The camera moves slightly to the right, capturing the robot dog's movements in a medium shot, showcasing a realistic video style."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00183.mp4",
+            "description": "183-I2V: A wide shot shows a penguin standing on a beach, looking to its right. The penguin takes a few small steps forward."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00184.mp4",
+            "description": "184-I2V: The video is a medium shot, showing a sea turtle swimming from the left to the right side of the frame. The camera follows the turtle's movement."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00185.mp4",
+            "description": "185-I2V: The video is a static wide shot of a sunset over the ocean with rocks in the foreground. As the sun sets, the sky changes colors from purple to dark blue."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00186.mp4",
+            "description": "186-I2V: A static medium shot captures a sloth slowly climbing up a tree trunk covered in moss in a dense forest. The sloth moves its claws one by one as it steadily ascends the tree."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00187.mp4",
+            "description": "187-I2V: The video is a static medium shot of a large group of seals resting and interacting on a beach. Some seals are moving slightly, scratching themselves, adjusting their position, or interacting with their neighbors."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00188.mp4",
+            "description": "188-I2V: A close-up static shot shows a steak being cooked on a hot surface as a pat of butter melts on top of it. The butter melts as the steak continues to cook."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00189.mp4",
+            "description": "189-I2V: A static, close-up shot shows a pair of chopsticks lifting noodles from a bowl of tomato and egg soup. The noodles are lifted and then returned to the bowl."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00190.mp4",
+            "description": "190-I2V: The video features a medium shot of a delicious-looking burger with the top bun levitating above the rest of the ingredients. As the video progresses, flames appear on the wooden board beneath the burger, creating a visually appealing contrast against the dark background."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00191.mp4",
+            "description": "191-I2V: The video is a static, medium shot of a chef preparing sashimi. The chef uses a long, thin knife to slice a piece of fish and then arranges the slices on a wooden cutting board."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00192.mp4",
+            "description": "192-I2V: The video is a static medium shot of a person using a wok and ladle to stir-fry rice over an open flame. The person lifts and tosses the rice in the wok throughout the video."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00193.mp4",
+            "description": "193-I2V: The video is a static medium shot of a man eating noodles with chopsticks from a plate. The man lifts the noodles from the plate to his mouth with chopsticks and eats them."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00194.mp4",
+            "description": "194-I2V: The video is a close-up shot of a woman eating a long, chewy noodle from a small metal bowl. The camera remains static throughout the video."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00195.mp4",
+            "description": "195-I2V: The video is a static medium shot of a young woman with black hair eating from a bowl with a spoon. The woman is looking at the camera and talking while eating."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00196.mp4",
+            "description": "196-I2V: The video starts with a close-up shot of a woman taking a bite of a burger. Then the camera zooms in for an extreme close-up shot of the burger as the woman holds it up."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00197.mp4",
+            "description": "197-I2V: The video is a static, medium shot of two Asian men with glasses sitting at a table eating sushi. The man on the left dips a piece of sushi into a glass of roe, then eats it, while the man on the right eats a piece of sushi wrapped in seaweed."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00198.mp4",
+            "description": "198-I2V: The video is a medium shot of a video game scene in a realistic style, where a character fights a large enemy with a sword. The camera follows the character as they move around the enemy and attack."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00199.mp4",
+            "description": "199-I2V: A video game character performs a finishing move on a large boss in a medium shot. The camera remains static throughout the duration of the video."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00200.mp4",
+            "description": "200-I2V: The video features a long shot of a video game character, clad in dark armor and carrying a sword, wading through a shallow stream towards a distant structure. The camera remains static throughout the shot, capturing the character's progress through the grassy plain."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00201.mp4",
+            "description": "201-I2V: The video is a back view of a red sports car driving fast on a desert road. The camera follows the car closely from behind in a medium shot, maintaining a consistent distance and angle as the car speeds up and briefly veers off the paved road."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00202.mp4",
+            "description": "202-I2V: The camera follows behind as a man rides a horse at a medium speed on a dirt path. The shot is an aerial shot."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00203.mp4",
+            "description": "203-I2V: The camera moves forward through a forest scene, simulating a first-person perspective. The camera stops as a gunshot is heard and muzzle flash is seen from the weapon in the foreground."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00204.mp4",
+            "description": "204-I2V: The video is a medium shot, following a man from behind as he walks through a gate and into a field of corn. The camera follows the man at a steady pace, capturing his movement as he navigates the path."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00205.mp4",
+            "description": "205-I2V: The video uses a static, medium-long shot to show a young man carrying a basket of persimmons, opening a set of wooden doors, and walking through them. The video has a realistic style."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00206.mp4",
+            "description": "206-I2V: The video is a static medium shot of a man sitting on logs as he feeds a piece of meat to a dog and then takes a drink from a can. The man then eats some of the meat himself as the dog watches."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00207.mp4",
+            "description": "207-I2V: The video is a static, medium shot of a group of people crossing a street in the rain at night. The camera is positioned on the sidewalk, and the people are walking away from the camera."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00404.mp4",
+            "description": "404-I2V: The robotic arm puts the banana inside the drawer."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00405.mp4",
+            "description": "405-I2V: the robotic arm moves the towel, puts the apple into the pot, and takes the apple out of the pot"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00406.mp4",
+            "description": "406-I2V: handhold shot, this quadruped robot climbed up the stairs"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00407.mp4",
+            "description": "407-I2V: static camera, this quadruped robot climbed up the stairs"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00408.mp4",
+            "description": "408-I2V: static camera, this humanoid robot awards with both hands raised above the head"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00440.mp4",
+            "description": "440-I2V: Keep the human appearance. The video is a static medium shot of a woman with long black hair, wearing a white dress, sitting at a table and talking while holding a chopstick. The background features a wall with a red and black design and a silver teapot on the table."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00448.mp4",
+            "description": "448-I2V: The video is a close-up, static shot of an analog clock with a white face and black numerals on a black background, the clock's minute and hour hands move to indicate the passage of time. The second hand of the clock is not visible."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00449.mp4",
+            "description": "449-I2V: The video is a static, close-up shot of a white quartz clock with black hands and Arabic numerals on a wooden headboard. The second hand of the clock rotates rapidly clockwise, completing 5 turns in a clockwise direction"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00450.mp4",
+            "description": "450-I2V: Multiple simulated clocks with gold decorations float on a rotating purple galaxy background. When the clock moves on the screen, the clock and minute hand keep moving clockwise, and the camera magnifies them."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00451.mp4",
+            "description": "451-I2V: The video shows a static camera with a digital alarm clock and an analog clock placed side by side. The time on the digital clock moves rapidly, while the time on the analog clock moves synchronously. The red second hand rotates counterclockwise."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00452.mp4",
+            "description": "452-I2V: A static close-up shot shows a digital clock with a green number rapidly counting up from 10:47 to 12:45. The entire scene in the video remains unchanged."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00453.mp4",
+            "description": "453-I2V: The video displays a static, close-up shot of a digital timer with a black background, the timer counts down from 56:02 to 55:49."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00454.mp4",
+            "description": "454-I2V: The black sand in the upper part of the hourglass quickly flowed down until it was all left at the bottom"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00455.mp4",
+            "description": "455-I2V: Time lapse photography, a static middle shot of a street scene captured from a car window, with a digital clock in the bottom left corner that counts down from 8:29 to 9:42. Pedestrians and vehicles come and go quickly"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00591.mp4",
+            "description": "591-I2V: The camera remains still, swing the person's left and right hands back and forth, at the same time, the left and right feet move rhythmically"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00592.mp4",
+            "description": "592-I2V: The camera remains still, swing the person's left and right hands back and forth, at the same time, the left and right feet move rhythmically"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00593.mp4",
+            "description": "593-I2V: The camera stays still as the man walks to the camera from a distance"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00594.mp4",
+            "description": "594-I2V: The camera is still and this character is alternately swinging her right and left hands in a lovely display of movement"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00595.mp4",
+            "description": "595-I2V: The camera remains still, swing the person's left and right hands back and forth, at the same time, the left and right feet move rhythmically"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00596.mp4",
+            "description": "596-I2V: The camera stands still as the woman takes a step to the right with her right foot, then a step back to the left with her left foot, and finally turns around in a circle to the right"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00597.mp4",
+            "description": "597-I2V: The camera is still. This woman is waving her hands in a sexy dance."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00598.mp4",
+            "description": "598-I2V: The boy makes an exaggerated expression on his face"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00599.mp4",
+            "description": "599-I2V: The man makes an exaggerated expression on his face"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00600.mp4",
+            "description": "600-I2V: make the monkey an exaggerated expression on its face"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00601.mp4",
+            "description": "601-I2V: the man is talking"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00602.mp4",
+            "description": "602-I2V: the man is talking"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00603.mp4",
+            "description": "603-I2V: The woman is saying the following: \"Yes, one; and in this manner.\""
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00604.mp4",
+            "description": "604-I2V: The woman is saying"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00605.mp4",
+            "description": "605-I2V: The woman is singing"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00606.mp4",
+            "description": "606-I2V: She closes her eyes and sings with great rapture"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00607.mp4",
+            "description": "607-I2V: He's talking, accompanied by gesture changes"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00609.mp4",
+            "description": "609-I2V: camera move right, The wind is blowing this man"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00610.mp4",
+            "description": "610-I2V: The three persons talked and laughed and turned to the right together, then the two persons on the right squatted down, and the man on the left pointed to the two persons on the right"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00611.mp4",
+            "description": "611-I2V: camera move right, The wind is blowing this man, the man keeps his motion"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00612.mp4",
+            "description": "612-I2V: The ego-car moves forward."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00613.mp4",
+            "description": "613-I2V: The ego-car turns left."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00614.mp4",
+            "description": "614-I2V: The ego-car turns to the right lane."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00618.mp4",
+            "description": "618-I2V: Initially, the woman is talking, then she waves her hands, and last she turns her head to the man."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00619.mp4",
+            "description": "619-I2V: Initially, a person comes in from the back, then a car comes in from the back, after that, the weather changes to sunset."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00620.mp4",
+            "description": "620-I2V: The ball-shaped game character in the middle of the image jumps left first, then moves left, last, moves right."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00621.mp4",
+            "description": "621-I2V: The game character in the middle of the image moves right first, then jumps up into the fire, and last, moves left."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00636.mp4",
+            "description": "636-I2V: The butter in the pot is heated at high temperature"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00637.mp4",
+            "description": "637-I2V: This person swings the baseball bat slowly with both hands"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00638.mp4",
+            "description": "638-I2V: This person vigorously swings a baseball bat with both hands"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00639.mp4",
+            "description": "639-I2V: The man uses both hands to hold and swing the bat."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00640.mp4",
+            "description": "640-I2V: Using both hands, the man holds and swings the bat."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00641.mp4",
+            "description": "641-I2V: He uses both hands to grip and swing the bat."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00642.mp4",
+            "description": "642-I2V: This person vigorously swings a baseball bat with both hands"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00643.mp4",
+            "description": "643-I2V: This person vigorously swings a baseball bat with both hands"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00644.mp4",
+            "description": "644-I2V: This person vigorously swings a baseball bat with both hands"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00645.mp4",
+            "description": "645-I2V: This person vigorously swings a baseball bat with both hands"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00646.mp4",
+            "description": "646-I2V: This person vigorously swings a baseball bat with both hands"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00647.mp4",
+            "description": "647-I2V: This person vigorously swings a baseball bat with both hands"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00648.mp4",
+            "description": "648-I2V: This person vigorously swings a baseball bat with both hands"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00649.mp4",
+            "description": "649-I2V: This person vigorously swings a baseball bat with both hands"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00650.mp4",
+            "description": "650-I2V: This person vigorously swings a baseball bat with both hands"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00651.mp4",
+            "description": "651-I2V: a woman is standing, with the camera slowly zooming in on her face from a wide shot to a close-up."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00652.mp4",
+            "description": "652-I2V: a woman is standing, with the camera smoothly panning from left to right"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00653.mp4",
+            "description": "653-I2V: a woman is standing, with the camera rotating 360 degrees around her"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00654.mp4",
+            "description": "654-I2V: a woman is standing, with the camera moving down"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00655.mp4",
+            "description": "655-I2V: a woman is standing, with the camera moving up"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00656.mp4",
+            "description": "656-I2V: a woman is standing, with the camera panning from right to left rapidly"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00667.mp4",
+            "description": "667-I2V: the person stands up from the chair"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00718.mp4",
+            "description": "718-I2V: Generative Visual Effects (GVFX) , A cinematic flames on the wall"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00720.mp4",
+            "description": "720-I2V: In this medium shot video, a woman is enveloped in a vibrant haze of colorful smoke, in a warm, ethereal light."
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00724.mp4",
+            "description": "724-I2V: Inflate it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00725.mp4",
+            "description": "725-I2V: Melt it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00726.mp4",
+            "description": "726-I2V: Explode it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00727.mp4",
+            "description": "727-I2V: Squish it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00728.mp4",
+            "description": "728-I2V: Crush it"
+        },
+        {
+            "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/i2v/minimax_00729.mp4",
+            "description": "729-I2V: Cake-ify it"
+        }
+    ]
+
     const videos_t2v = [
         {
             "src": "https://video-gen.oss-cn-beijing.aliyuncs.com/minimax/t2v/minimax_00102.mp4",
@@ -1758,4 +2773,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     createGallery('gallery1', videos_t2v);
+    createGallery('gallery2', videos_i2v);
 });
