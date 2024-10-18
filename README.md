@@ -33,8 +33,8 @@
 
 
 ## 🔥 Project Updates
--  **News**: ```2024/10/18```: We update results of Meta-MovieGen (prompts are from MovieGenVideoBench), please check our website.
--  **News**: ```2024/10/14```: We update results of Minimax I2V, please check [Minimax](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/minimax/minimax.html).
+- **News**: ```2024/10/18```: We update 1k text-to-video results of [Meta-MovieGen](https://ai.meta.com/research/movie-gen/) (prompts are from MovieGenVideoBench); please check [here](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/MovieGen/MovieGen.html).
+-  **News**: ```2024/10/14```: We update results of Minimax image-to-video generation, please check [here](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/minimax/minimax.html).
 -  **News**: ```2024/10/08```: VideoGen-Eval-1.0 is available, please check the [Project Page](https://ailab-cvc.github.io/VideoGen-Eval/) and [Technical Report](http://arxiv.org/abs/2410.05227) for more details.
 
 <!-- TABLE OF CONTENTS -->
