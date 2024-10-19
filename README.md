@@ -33,7 +33,7 @@
 
 
 ## 🔥 Project Updates
-- **News**: ```2024/10/18```: We update 1k text-to-video results of [Meta-MovieGen](https://ai.meta.com/research/movie-gen/) (prompts are from MovieGenVideoBench); please check [here](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/MovieGen/MovieGen.html).
+- **News**: ```2024/10/19```: We update 1k text-to-video results of [Meta-MovieGen](https://ai.meta.com/research/movie-gen/) (prompts are from MovieGenVideoBench); please check [here](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/MovieGen/MovieGen.html). Plus, we make the pypi package `VGenEval` available, you can easily obtain the input prompt corresponding to any ID in VideoGen-Eval through this.
 -  **News**: ```2024/10/14```: We update results of Minimax image-to-video generation, please check [here](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/minimax/minimax.html).
 -  **News**: ```2024/10/08```: VideoGen-Eval-1.0 is available, please check the [Project Page](https://ailab-cvc.github.io/VideoGen-Eval/) and [Technical Report](http://arxiv.org/abs/2410.05227) for more details.
 
@@ -71,12 +71,31 @@ We assign an ID to each case. The input text, the names of input images and vide
 
 ## 🎞️ Assets
 
-The inputs we introduced, including the input text, images, videos, and the generated results of all models, are available for download at [Google Drive](https://drive.google.com/drive/folders/11WxQudsVgqI-ETXQB5PQjd7dzhz41-E0?usp=sharing) and [Baidu](https://pan.baidu.com/s/16nhiiKIYn3EPRMpefEoEqw?pwd=rgha). You can also visit our [Website](https://ailab-cvc.github.io/VideoGen-Eval/) to browse these results online.  
+The inputs we introduced, including the input text, images, videos, and the generated results of all models, are available for download at [Google Drive](https://drive.google.com/drive/folders/11WxQudsVgqI-ETXQB5PQjd7dzhz41-E0?usp=sharing) and [Baidu](https://pan.baidu.com/s/16nhiiKIYn3EPRMpefEoEqw?pwd=rgha). You can also visit our [Website](https://ailab-cvc.github.io/VideoGen-Eval/) to browse these results online.
+
+Get VideoGen-Eval prompts:
+```bash
+pip install VGenEval
+
+# example
+#id_list of the id e.g. [0,1,2,3]
+#test_model_name of the model name e.g. 'SORA'
+from VGenEval import load_prompt
+results = load_prompt.get_prompts([id_list], 'test_model_name')
+
+# results is a dict, {
+#   'text prompt': [],
+#   'visual prompt': [], return the url of the input image or video
+#   'save name': [], We have standardized the save name
+# }
+
+# note: for the sample which takes the first-last frame for generation, visual prompt return urls of the two frames.
+```
 
 ## 🦉 Job List
 
 - [x] VideoGen-Eval-1.0 released 
-- [ ] Add results of Seaweed, PixelDance, MovieGen, and MiracleVision.
+- [ ] Add results of Seaweed, PixelDance, and MiracleVision.
 - [ ] Make the arena for video generation models.
 
 <!-- CONTRIBUTING -->
