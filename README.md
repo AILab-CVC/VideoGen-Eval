@@ -33,6 +33,7 @@
 
 
 ## 🔥 Project Updates
+- **News**: ```2024/11/01```: We update text-to-video results of [Mochi1](https://www.genmo.ai/blog), we use `cfg=6.0`, which is the same as their website.
 - **News**: ```2024/10/19```: We update 1k text-to-video results of [Meta-MovieGen](https://ai.meta.com/research/movie-gen/) (prompts are from MovieGenVideoBench); please check [here](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/MovieGen/MovieGen.html). **Plus, we make the pypi package `VGenEval` available, you can easily obtain all input prompts (text, image, video) corresponding to any ID through jsut one line of code.**
 -  **News**: ```2024/10/14```: We update results of Minimax image-to-video generation, please check [here](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/minimax/minimax.html).
 -  **News**: ```2024/10/08```: VideoGen-Eval-1.0 is available, please check the [Project Page](https://ailab-cvc.github.io/VideoGen-Eval/) and [Technical Report](http://arxiv.org/abs/2410.05227) for more details.
