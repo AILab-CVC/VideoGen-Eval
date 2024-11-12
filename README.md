@@ -33,6 +33,7 @@
 
 
 ## 🔥 Project Updates
+- **News**: ```2024/11/12```: We update results of [Seaweed](https://jimeng.jianying.com/ai-tool/home) and [PixVerse-V3](https://pixverse.ai/), please check our website.
 - **News**: ```2024/11/01```: We update text-to-video results of [Mochi1](https://www.genmo.ai/blog), we use `cfg=6.0`, which is the same as their website.
 - **News**: ```2024/10/19```: We update 1k text-to-video results of [Meta-MovieGen](https://ai.meta.com/research/movie-gen/) (prompts are from MovieGenVideoBench); please check [here](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/MovieGen/MovieGen.html). **Plus, we make the pypi package `VGenEval` available, you can easily obtain all input prompts (text, image, video) corresponding to any ID through jsut one line of code.**
 -  **News**: ```2024/10/14```: We update results of Minimax image-to-video generation, please check [here](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/minimax/minimax.html).
@@ -96,7 +97,7 @@ results = load_prompt.get_prompts([id_list], 'test_model_name')
 ## 🦉 Job List
 
 - [x] VideoGen-Eval-1.0 released 
-- [ ] Add results of Seaweed, PixelDance, and MiracleVision.
+- [x] Add results of Seaweed, PixVerse.
 - [ ] Make the arena for video generation models.
 
 <!-- CONTRIBUTING -->
