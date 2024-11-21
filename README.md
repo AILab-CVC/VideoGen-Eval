@@ -33,6 +33,7 @@
 
 
 ## 🔥 Project Updates
+- **News**: ```2024/11/21```: We update results of Seaweed2.0 Pro and PixelDance2.0 Pro, please check our website.
 - **News**: ```2024/11/12```: We update results of [Seaweed](https://jimeng.jianying.com/ai-tool/home) and [PixVerse-V3](https://pixverse.ai/), please check our website.
 - **News**: ```2024/11/01```: We update text-to-video results of [Mochi1](https://www.genmo.ai/blog), we use `cfg=6.0`, which is the same as their website.
 - **News**: ```2024/10/19```: We update 1k text-to-video results of [Meta-MovieGen](https://ai.meta.com/research/movie-gen/) (prompts are from MovieGenVideoBench); please check [here](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/MovieGen/MovieGen.html). **Plus, we make the pypi package `VGenEval` available, you can easily obtain all input prompts (text, image, video) corresponding to any ID through jsut one line of code.**
@@ -85,7 +86,7 @@ pip install VGenEval
 from VGenEval import load_prompt
 results = load_prompt.get_prompts([id_list], 'test_model_name')
 
-# results is a dict, {
+# result is a dict, {
 #   'text prompt': [],
 #   'visual prompt': [], return the url of the input image or video
 #   'save name': [], We have standardized the save name
