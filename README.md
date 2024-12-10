@@ -33,6 +33,7 @@
 
 
 ## 🔥 Project Updates
+- **News**: ```2024/12/10```: We update results of [Sora](https://openai.com/sora/) and the comparison results of the latest 6 Sota models.
 - **News**: ```2024/12/04```: We update results of [Hunyuan](https://github.com/Tencent/HunyuanVideo), please check our website.
 - **News**: ```2024/11/21```: We update results of Seaweed2.0 Pro, PixelDance2.0 Pro, Pika1.5 and Vidu1.5, please check our website.
 - **News**: ```2024/11/12```: We update results of [Seaweed](https://jimeng.jianying.com/ai-tool/home) and [PixVerse-V3](https://pixverse.ai/), please check our website.

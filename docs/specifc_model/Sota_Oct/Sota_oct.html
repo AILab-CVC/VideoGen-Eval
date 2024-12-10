@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sota Comparison (Oct. 2024)</title>
+    <link rel="stylesheet" href="../css/specific_styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="../../index.html" class="back-to-main">← Back to Main</a>
+            <div class="logo">
+                <span>●</span> Comparison (Oct. 2024)
+            </div>
+        </div>
+        <nav class="category-nav">
+            <a href="#text-to-video" class="category-button">Text-to-Video</a>
+            <a href="#image-to-video" class="category-button">Image-to-Video</a>
+            <a href="#video-to-video" class="category-button">Video-to-Video</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Comparison results of Several SOTA Models (Oct. 2024)</h1>
+        </section>
+
+        <section id="text-to-video">
+            <h1>Text-to-Video</h1>
+            <div class="projects-container" id="gallery1">
+                <div class="projects">
+                </div>
+            </div>
+        </section>
+        
+        <section id="image-to-video">
+            <h1>Image-to-Video</h1>
+            <div class="projects-container" id="gallery2">
+                <div class="projects">
+                </div>
+            </div>
+        </section>
+
+        <section id="video-to-video">
+            <h1>Video-to-Video</h1>
+            <div class="projects-container" id="gallery3">
+                <div class="projects">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./Sota_oct.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Highlight active nav item
+        const navLinks = document.querySelectorAll('.category-button');
+        const sections = document.querySelectorAll('section');
+
+        function changeLinkState() {
+            let index = sections.length;
+
+            while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
+            
+            navLinks.forEach((link) => link.classList.remove('active'));
+            navLinks[index].classList.add('active');
+        }
+
+        window.addEventListener('scroll', changeLinkState);
+    </script>
+</body>
+</html>
