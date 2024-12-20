@@ -25,6 +25,8 @@ header {
     z-index: 1000;
 }
 
+
+
 .header-left {
     display: flex;
     align-items: center;
@@ -151,4 +153,42 @@ h2 {
 .category-button.active {
     background-color: var(--text-color);
     color: var(--background-color);
+}
+
+.model-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 4rem;
+}
+
+.model-links a {
+    padding: 0.5rem 0.5rem;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.model-links a:hover {
+    background-color: var(--dark-gray);
+}
+
+
+#text-to-video, #image-to-video, #video-to-video {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+#text-to-video h1, #image-to-video h1, #video-to-video h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    text-align: center;
 }
