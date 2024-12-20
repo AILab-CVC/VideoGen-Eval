@@ -2606,4 +2606,5 @@ document.addEventListener("DOMContentLoaded", () => {
     createGallery('gallery1', videos_t2v);
     createGallery('gallery2', videos_i2v);
     createGallery('gallery3', videos_v2v);
+    //This is the end of the file
 });
