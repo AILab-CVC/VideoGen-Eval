@@ -4027,34 +4027,34 @@ document.addEventListener("DOMContentLoaded", () => {
                 const videoElement = document.createElement('video');
                 videoElement.controls = true;
                 videoElement.src = videoSrc;
-                videoElement.style.width = '100%'; // 确保视频宽度适应容器
-                videoElement.style.height = 'auto'; // 高度根据内容调整
-                videoElement.classList.add('lazy-loaded-video'); // 添加样式控制类
+                videoElement.style.width = '100%';
+                videoElement.style.height = 'auto';
+                videoElement.classList.add('lazy-loaded-video');
     
                 videoContainer.replaceChild(videoElement, thumbnail);
+
+                videoContainer.style.height = 'auto';
     
-                // 手动触发布局重绘
-                videoContainer.style.height = 'auto'; // 确保容器高度自适应内容
-    
-                // 停止观察
                 observer.unobserve(videoContainer);
             }
         });
     };
-
-    // 创建一个轮播画廊的函数
-    function createGallery(galleryId, videos) {
-        const galleryElement = document.querySelector(`#${galleryId} .projects`);
     
-        videos.forEach(video => {
+    // 创建一个轮播画廊的函数
+    function createGallery(videos) {
+        const galleryElement = document.querySelector('#gallery1 .projects');
+        
+        const end = Math.min(page_id*nVideosPerPage+nVideosPerPage, videos.length);
+        for(let i=page_id*nVideosPerPage; i<end; i++){
+            const video = videos[i];
+            console.log({video})
             const projectDiv = document.createElement('div');
             projectDiv.classList.add('project');
     
-            // 使用缩略图并懒加载视频
             const thumbnail = document.createElement('img');
-            thumbnail.src = 'thumbnail.jpg'; // 静态缩略图
+            thumbnail.src = 'thumbnail.jpg';
             thumbnail.classList.add('video-thumbnail');
-            thumbnail.dataset.src = video.src; // 将视频URL存储在data属性中
+            thumbnail.dataset.src = video.src;
     
             const pElement = document.createElement('p');
             pElement.textContent = video.description;
@@ -4062,9 +4062,8 @@ document.addEventListener("DOMContentLoaded", () => {
             projectDiv.appendChild(thumbnail);
             projectDiv.appendChild(pElement);
             galleryElement.appendChild(projectDiv);
-        });
+        }
     
-        // 使用Intersection Observer来懒加载
         const observer = new IntersectionObserver(lazyLoadVideo, {
             root: null,
             rootMargin: '0px',
@@ -4072,6 +4071,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     
         // 观察所有项目
+        const galleryId = 'gallery1';
         document.querySelectorAll(`#${galleryId} .project`).forEach(project => {
             observer.observe(project);
         });
@@ -4080,19 +4080,79 @@ document.addEventListener("DOMContentLoaded", () => {
     function rearrangeVideos(galleryId) {
         const projectsContainer = document.querySelector(`#${galleryId} .projects`);
         const projects = Array.from(projectsContainer.children);
-        const columnCount = 3; // 你定义了3列
+        const columnCount = 3;
 
         let rows = [];
-        // 将项目按行分组
         for (let i = 0; i < projects.length; i += columnCount) {
             rows.push(projects.slice(i, i + columnCount));
         }
 
-        // 重新插入项目，按行排列
-        projectsContainer.innerHTML = ''; 
+        projectsContainer.innerHTML = '';
         rows.forEach(row => {
             row.forEach(project => projectsContainer.appendChild(project));
         });
     }
-    createGallery('gallery1', videos_t2v);
+    var currentCategory = 'but-text-to-video'
+    function clearStyle(){
+        const buttons = document.querySelectorAll('.category-button');
+        buttons.forEach(button => {
+            button.style.backgroundColor = '';
+            button.style.color = '';
+        });
+    }
+    const buttons=['but-text-to-video', 'but-image-to-video', 'but-video-to-video'];
+    const textListMap = {
+        'but-text-to-video': videos_t2v,
+        'but-image-to-video': videos_i2v,
+        'but-video-to-video': videos_v2v
+    }
+    createGallery(textListMap[currentCategory]);
+    function createPageLinks(pageCount){
+        const pageLinks = document.getElementById('page-links');
+        const pageLinks_bottom = document.getElementById('page-links-bottom');
+        pageLinks.innerHTML = '';
+        pageLinks_bottom.innerHTML = '';
+        for(let i=0; i<pageCount; i++){
+            var a = document.createElement('a');
+            var ab = document.createElement('a');
+            if(i==page_id){
+                a.style="background-color: aqua; color:#000000"
+                ab.style="background-color: aqua; color:#000000"
+            }
+            a.innerText = i+1;
+            ab.innerText = i+1;
+            pageLinks.appendChild(a).id = 'page-'+i;
+            pageLinks_bottom.appendChild(ab).id = 'page-'+i;
+            a.addEventListener('click', function() {
+                page_id = i;
+                createPageLinks(pageCount);
+                document.querySelector('#gallery1 .projects').innerHTML = '';
+                createGallery(textListMap[currentCategory]);  // 使用当前分类
+            });
+            ab.addEventListener('click', function() {
+                page_id = i;
+                createPageLinks(pageCount);
+                document.querySelector('#gallery1 .projects').innerHTML = '';
+                createGallery(textListMap[currentCategory]);  // 使用当前分类
+            });
+        }
+    }
+    buttons.forEach(button => {
+        const but = document.getElementById(button)
+        but.innerText = but.innerText+'('+textListMap[button].length+')'
+        but.addEventListener('click', function() {
+            clearStyle();
+            currentCategory = button;  // 更新当前分类
+            document.querySelector('#gallery1 .projects').innerHTML = '';
+            page_id = 0;
+            createGallery(textListMap[button]);
+            const pageCount = Math.ceil(textListMap[button].length / nVideosPerPage);
+            createPageLinks(pageCount);
+            document.getElementById(button).style.backgroundColor = 'aquamarine';
+            document.getElementById(button).style.color = '#000000';
+        });
+    });
+    const pageCount = Math.ceil(textListMap[currentCategory].length / nVideosPerPage);
+    createPageLinks(pageCount)
+
 });

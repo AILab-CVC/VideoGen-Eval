@@ -2829,16 +2829,16 @@ document.addEventListener("DOMContentLoaded", () => {
             pageLinks.appendChild(a).id = 'page-'+i;
             pageLinks_bottom.appendChild(ab).id = 'page-'+i;
             a.addEventListener('click', function() {
-                page_id = i
-                createPageLinks(pageCount)
+                page_id = i;
+                createPageLinks(pageCount);
                 document.querySelector('#gallery1 .projects').innerHTML = '';
-                createGallery(textListMap[currentCategory])
+                createGallery(textListMap[currentCategory]);  // 使用当前分类
             });
             ab.addEventListener('click', function() {
-                page_id = i
-                createPageLinks(pageCount)
+                page_id = i;
+                createPageLinks(pageCount);
                 document.querySelector('#gallery1 .projects').innerHTML = '';
-                createGallery(textListMap[currentCategory])
+                createGallery(textListMap[currentCategory]);  // 使用当前分类
             });
         }
     }
@@ -2846,12 +2846,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const but = document.getElementById(button)
         but.innerText = but.innerText+'('+textListMap[button].length+')'
         but.addEventListener('click', function() {
-            clearStyle()
+            clearStyle();
+            currentCategory = button;  // 更新当前分类
             document.querySelector('#gallery1 .projects').innerHTML = '';
-            page_id = 0
-            createGallery(textListMap[button])
+            page_id = 0;
+            createGallery(textListMap[button]);
             const pageCount = Math.ceil(textListMap[button].length / nVideosPerPage);
-            createPageLinks(pageCount)
+            createPageLinks(pageCount);
             document.getElementById(button).style.backgroundColor = 'aquamarine';
             document.getElementById(button).style.color = '#000000';
         });
