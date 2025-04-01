@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sota compare (Dec.) Results</title>
+    <link rel="stylesheet" href="../css/specific_styles.css">
+</head>
+<body>
+<main>
+    <header>
+        <div class="header-left">
+            <a href="../../index.html" class="back-to-main">← Back to Main</a>
+            <div class="logo">
+                <span>●</span> Sota compare (Dec.)
+            </div>
+        </div>
+        <nav class="category-nav">
+            <a id="but-text-to-video" style="background-color: aqua; color:#000000" class="category-button">Text-to-Video</a>
+            <a id="but-image-to-video" class="category-button">Image-to-Video</a>
+            <a id="but-video-to-video" class="category-button">Video-to-Video</a>
+        </nav>
+    </header>
+    <section class="intro">
+        <h1>Sota Compare</a></h1>
+    </section>
+
+    <div class="model-links" id="page-links">
+        <a id="page-1" style="background-color: aqua; color:#000000">1</a>
+    </div>
+    <section id="text-to-video">
+        <div class="projects-container" id="gallery1">
+            <div class="projects">
+            </div>
+        </div>
+    </section>
+    <div class="model-links" id="page-links-bottom">
+        <a id="page-1" style="background-color: aqua; color:#000000">1</a>
+    </div>
+    
+</main>
+
+<script src="./compare_24_12.js"></script>
+<script>
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // 高亮当前活动的导航项
+    const navLinks = document.querySelectorAll('.category-button');
+    const sections = document.querySelectorAll('section');
+
+    function changeLinkState() {
+        let index = sections.length;
+
+        while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
+        
+        navLinks.forEach((link) => link.classList.remove('active'));
+        navLinks[index - 1].classList.add('active');
+    }
+
+    window.addEventListener('scroll', changeLinkState);
+</script>
+
+</body>
+</html>

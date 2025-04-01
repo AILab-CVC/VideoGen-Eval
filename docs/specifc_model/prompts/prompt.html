@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompts</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <style>
+        .download-btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+
+        #excelData table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        
+        #excelData td, #excelData th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>All the prompts</h1>
+        <button id="downloadBtn"> <a href="https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/prompts/prompts.xlsx">Download</a></button>
+        <div id="excelData"></div>
+    </main>
+
+<script>
+        fetch('./prompts.xlsx')
+            .then(response => response.arrayBuffer())
+            .then(data => {
+                workbook = XLSX.read(data, {type: 'array'});
+                const firstSheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[firstSheetName];
+
+                const range = XLSX.utils.decode_range(worksheet['!ref']);
+            
+                for (let C = range.e.c; C >= range.s.c; C--) {
+                    let isEmpty = true;
+                    for (let R = range.s.r; R <= range.e.r; R++) {
+                        const cellAddress = XLSX.utils.encode_cell({r: R, c: C});
+                        if (worksheet[cellAddress] && worksheet[cellAddress].v !== undefined) {
+                            isEmpty = false;
+                            break;
+                        }
+                    }
+                    if (isEmpty) {
+                        range.e.c--;
+                    } else {
+                        break;
+                    }
+                }
+                
+                for (let R = range.e.r; R >= range.s.r; R--) {
+                    let isEmpty = true;
+                    for (let C = range.s.c; C <= range.e.c; C++) {
+                        const cellAddress = XLSX.utils.encode_cell({r: R, c: C});
+                        if (worksheet[cellAddress] && worksheet[cellAddress].v !== undefined) {
+                            isEmpty = false;
+                            break;
+                        }
+                    }
+                    if (isEmpty) {
+                        range.e.r--;
+                    } else {
+                        break;
+                    }
+                }
+                
+                worksheet['!ref'] = XLSX.utils.encode_range(range);
+                
+                const html = XLSX.utils.sheet_to_html(worksheet);
+                document.getElementById('excelData').innerHTML = html;
+                
+                const table = document.querySelector('#excelData table');
+                if (table) {
+                    table.className = 'excel-table';
+                }
+            });
+
+    function downloadExcel() {
+        if (workbook) {
+            const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+            const data = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+            const url = URL.createObjectURL(data);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/prompts/prompts.xlsx';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+    }
+    </script>
+</body>
+</html>

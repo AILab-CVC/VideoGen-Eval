@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompts</title>
+    <title>Agent-T2V Prompts</title>
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
     <style>
@@ -40,8 +40,8 @@
 </head>
 <body>
     <main>
-        <h1>All the prompts</h1>
-        <button id="downloadBtn"> <a href="https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/prompts.xlsx">Download</a></button>
+        <h1>T2V prompts used in agent evaluation</h1>
+        <button id="downloadBtn"> <a href="https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/prompts/VideoGen-Eval_T2V.xlsx">Download</a></button>
         <div id="excelData"></div>
     </main>
 
@@ -105,7 +105,7 @@
             const url = URL.createObjectURL(data);
             const link = document.createElement('a');
             link.href = url;
-            link.download = 'https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/prompts.xlsx';
+            link.download = 'https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/prompts/VideoGen-Eval_T2V.xlsx';
             link.click();
             URL.revokeObjectURL(url);
         }

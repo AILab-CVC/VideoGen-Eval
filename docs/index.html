@@ -9,11 +9,17 @@
 <body>
     <header>
         <div class="logo">
-            <span></span> VideoGen-Eval v1.0
+            <span></span> VideoGen-Eval
         </div>
         <nav>
             <ul>
-                <li><a href="http://arxiv.org/abs/2410.05227">Technical Report</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Paper</a>
+                    <div class="dropdown-content">
+                        <a href="http://arxiv.org/abs/2410.05227">Technical Survey</a>
+                        <a href="http://arxiv.org/abs/2503.23452">Agent Evaluation</a>
+                    </div>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Contact</a>
                     <div class="dropdown-content">
@@ -28,54 +34,114 @@
                         <a href="https://pan.baidu.com/s/16nhiiKIYn3EPRMpefEoEqw?pwd=rgha">Baidu</a>
                     </div>
                 </li>
-                <li><a href="specifc_model/prompt.html">Prompt</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Prompt</a>
+                    <div class="dropdown-content">
+                        <a href="specifc_model/prompts/prompt.html">Prompt_v1.0</a>
+                        <a href="specifc_model/prompts/agent_prompt_t2v.html">Agent_T2V</a>
+                        <a href="specifc_model/prompts/agent_prompt_v2v.html">Agent_V2V</a>
+                    </div>
+                </li>
                 <li><a href="https://github.com/AILab-CVC/VideoGen-Eval">Github</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="intro">
-        <h1 class="main-title">The Dawn of Video Generation: Preliminary Explorations with SORA-like Models</h1>
+        <h1 class="main-title">VideoGen-Eval: Agent-based System for Video Generation Evaluation</h1>
         <div class="authors">
             <p>
-                <span class="author"><a href="https://ailingzeng.site/" target="_blank">Ailing Zeng</a><sup>1*</sup></span>,
-                <span class="author"><a href="https://yyvhang.github.io/" target="_blank">Yuhang Yang</a><sup>2*</sup></span>,
-                <span class="author"><a href="" target="_blank">Weidong Chen</a><sup>1</sup></span>,
-                <span class="author"><a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ&hl=en" target="_blank">Wei Liu</a><sup>1</sup></span>
+                <span class="author"><a href="https://yyvhang.github.io/" target="_blank">Yuhang Yang</a><sup>1</sup></span>,
+                <span class="author"><a href="https://scholar.google.com/citations?user=b_5HJmQAAAAJ&hl=zh-CN" target="_blank">Ke Fan</a><sup>2</sup></span>,
+                <span class="author"><a href="" target="_blank">Shangkun Sun</a><sup>3</sup></span>,
+                <span class="author"><a href="https://lihxxx.github.io/" target="_blank">Hongxiang Li</a><sup>3</sup></span>,
+                <span class="author"><a href="https://ailingzeng.site/" target="_blank">Ailing Zeng</a><sup>4,*</sup></span>,
+                <span class="author"><a href="https://feilinh.cn/" target="_blank">Feilin Han</a><sup>5</sup></span>, <br>
+                <span class="author"><a href="https://tiaotiao11-22.github.io/wzhai/" target="_blank">Wei Zhai</a><sup>1,*</sup></span>,
+                <span class="author"><a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ&hl=en" target="_blank">Wei Liu</a><sup>4</sup></span>,
+                <span class="author"><a href="https://scholar.google.com/citations?user=K7rTHNcAAAAJ&hl=zh-CN" target="_blank">Yang Cao</a><sup>1</sup></span>,
+                <span class="author"><a href="https://scholar.google.fr/citations?user=gDnBC1gAAAAJ&hl=en" target="_blank">Zheng-Jun Zha</a><sup>1</sup></span>
             </p>
         </div>
         <div class="affiliations">
-            <p><sup>1</sup>Tencent, AI Lab, <sup>2</sup>USTC</p>
-            <p><sup>*</sup>Equal contribution</p>
+            <p><sup>1</sup>USTC, <sup>2</sup>SJTU, <sup>3</sup>PKUSZ, <sup>4</sup>Tencent, <sup>5</sup>BFA</p>
+            <p><sup>*</sup>Corresponding Author</p>
         </div>
 
         <div class="description-section">
-            <p class="main-description">
-                Seeing is believing. To observe and compare the video quality of recent generative video models, we open non-cherry-picked generated videos with over 700 designed prompts from:
+            <p class="main-description" style="font-size: 1.0em;">
+                The rapid advancement of video generation has rendered existing evaluation systems inadequate for assessing 
+                state-of-the-art models, primarily due to simple prompts that cannot showcase the model's capabilities, 
+                fixed evaluation operators struggling with Out-of-Distribution (OOD) cases, and misalignment between computed 
+                metrics and human preferences. To bridge the gap, we propose VideoGen-Eval, an agent evaluation system that integrates 
+                LLM-based content structuring, MLLM-based content judgment, and patch tools designed for temporal-dense dimensions, 
+                to achieve a <span style="color: red;">dynamic</span>, <span style="color: red;">flexible</span>, and <span style="color: red;">expandable</span> 
+                video generation evaluation. Additionally, we introduce a video generation benchmark to evaluate existing cutting-edge models and verify 
+                the effectiveness of our evaluation system. It comprises <span style="color: red;">700</span> structured, content-rich prompts (both T2V and I2V) 
+                and over <span style="color: red;">12,000</span> videos generated by <span style="color: red;">20+</span> models, among them, 8 cutting-edge models are selected as quantitative evaluation 
+                for the agent and human. Extensive experiments validate that our proposed agent-based evaluation system demonstrates 
+                strong alignment with human preferences and reliably completes the evaluation, as well as the diversity and richness of the benchmark.
             </p>
+            <p>Key Features:</p>
             <ul class="description-list">
-                <li>Vertical-domain applications, such as human-centric animation and robotics, etc.;</li>
-                <li>Key objective capabilities, such as text alignment, motion diversity, composition, stability, etc.;</li>
-                <li>Ten application scenarios, such as film, advertisment, anime, etc.;</li>
-                <li>Challenges and future directions, such as complex motion, interaction, concept understanding, etc.;</li>
+                <li style="text-align: justify;">A dynamic agent system for video generation evaluation, which orchestrates LLM-based content structuring, MLLM-based judging, and operator-based patch tools to achieve a dynamic, flexible, and expandable evaluation;</li>
+                <li style="text-align: justify;">Non-cherry-picked 12,000+ videos generated by 20+ models with over 700 designed prompts. 8 advanced models with human annotations are selected for quantitative tests, building the cutting-edge video generation benchmark;</li>
+                <li style="text-align: justify;">Results of 10 vertical-domain, such as human-centric animation and robotics, text alignment, motion diversity, composition, stability, etc. And 10 application scenarios, such as film, advertisment, anime, etc.;</li>
+                <li style="text-align: justify;">Challenges and future directions, such as complex motion, interaction, concept understanding, etc.;</li>
             </ul>
         </div>
-
-        <img src="./teaser/teaser.png" alt="Teaser Image" style="max-width: 100%; height: auto;">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+            <img src="./teaser/teaser2.png" alt="Teaser Image" style="max-width: 100%; height: auto;">
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+            <img src="./teaser/teaser.png" alt="Teaser Image" style="max-width: 100%; height: auto;">
+        </div>
         
         <div class="footnote-info">
-        <h2 class="model-results-title">Compare all model videos: </h2>
-            <p>On the main page, we concatenate the video results from multiple models for comparison.</p> 
-            <p>The input text prompts are listed below the video (Index-Task: Prompt). Notably, you can download all results from the Download button.</p>
-            <p>Note: Due to certain reasons, some models cannot generate certain cases. In such cases, we choose to pad it with the mask.
+            <h2 class="model-results-title">Pipeline of Our Agent-based System</h2>
+            <img src="./teaser/agent_pipeline.png" alt="Teaser Image" style="max-width: 100%; height: auto;">
+            <p style="text-align: justify; color: white;">The agent-based evaluation system is mainly composed of three parts: LLM-based content structure, MLLM-based judged, 
+                and patch tools. The content structurer parses the input prompt into dimension-specific content and sends it, 
+                along with the generated video, to the MLLM-based content judger. Leveraging the MLLM fundamental objective understanding 
+                capabilities and externally invoked temporally dense tools, the system assesses whether multiple dimensions of the input 
+                are accurately generated. The resulting scores and feedback are used for ranking, evaluation, and potentially supporting post-training.</p>
+        </div>
+
+        <div class="footnote-info">
+            <h2 class="model-results-title">Human Annotation</h2>
+            <img src="./teaser/annotation.png" alt="Teaser Image" style="max-width: 100%; height: auto;">
+            <p style="text-align: justify; color: white;">We employ film and television professionals to annotated the videos generated by 8 cutting-edge models according to the established rules, in order to verify the reliability of the agent system.
+                The above shows the information provided in the human annotation process, as well as the annotation instruction and result examples.</p>
+        </div>
+
+        <div class="footnote-info">
+            <h2 class="model-results-title">Alignmen between Agent System and Human Evaluation</h2>
+            <img src="./teaser/alignment.png" alt="Teaser Image" style="max-width: 100%; height: auto;">
+            <p style="text-align: justify; color: white;"> (a) The distribution of scores given by humans and agent systems to each dimension of 8 models. <br>
+                (b) Alignment ratios of agent evaluation to human evaluation on different models across multiple dimensions.</p>
+        </div>
+
+        <div class="footnote-info">
+            <h2 class="model-results-title">Comparison</h2>
+            <img src="./teaser/compare.png" alt="Teaser Image" style="max-width: 100%; height: auto;">
+            <p style="text-align: justify; color: white;">Comparisons among Vbench operators, our agent system, and human rankings on several evaluation dimensions.</p>
+        </div>
+
+        <div class="footnote-info">
+            <h2 class="model-results-title">Notes</h2>
+            <li style="text-align: left;">On the main page, we concatenate the video results from 8 cutting-edge models and give both human and agent evaluation results for comparison;</li> 
+            <li style="text-align: left;">The input text prompts are listed below the video (Index-Task: Prompt). Notably, you can download all results from the Download button;</li>
+            <li style="text-align: left;">Due to certain reasons, some models cannot generate certain cases. We show the case which could be generated by all models;</li>
+            <li style="text-align: left;">On the main page, we use prompts: Agent_T2V and Agent_I2V, while other pages use the prompts: Prompt_v1.0</li>
         </div>
 
         <div class="footnote-info"></div>
-        <h2 class="model-results-title">Check separate model videos: </h2>
+        <h2 class="model-results-title">Check separate model videos (2024): </h2>
             <p>We will continue to update the results with model releases and version updates.</p>
         </div>
         <div class="model-links">
-                    <a href="specifc_model/Sota_Oct/Sota_oct.html">SOTA Comparison (Oct. 2024)</a>
+        <a href="specifc_model/compare_24_12/compare_24_12.html">SOTA Comparison (Dec. 2024)</a>
+        <a href="specifc_model/Sota_Oct/Sota_oct.html">SOTA Comparison (Oct. 2024)</a>
         <a href="specifc_model/gen3/gen3.html">Gen-3 (Aug.~Sep.)</a>
         <a href="specifc_model/kling/kling.html">Kling v1.0 (Aug.~Sep.)</a>
         <a href="specifc_model/kling1.5/kling1.5.html">Kling v1.5 (Sep.)</a>

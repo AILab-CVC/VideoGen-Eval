@@ -9,30 +9,36 @@
 
 <br />
 <div align="center">
-  <img src="docs/teaser/teaser.png" alt="Logo">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+            <img src="./docs/teaser/teaser2.png" alt="Teaser Image" style="max-width: auto; height: 220px;">
+            <img src="./docs/teaser/teaser.png" alt="Teaser Image" style="max-width: auto; height: 220px;">
+        </div>
 
-  <h1 align="center">VideoGen-Eval 1.0</h1>
+  <h1 align="center">VideoGen-Eval: Agent-based System for Video Generation Evaluation</h1>
   
-#### [<code>Project Page 🚀</code>](https://ailab-cvc.github.io/VideoGen-Eval/) | [<code>Technical Report 📝</code>](http://arxiv.org/abs/2410.05227)  | [<code>Prompt 🎬</code>](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/prompt.html)  | [<code>Video Download 🤩</code>](https://drive.google.com/drive/folders/11WxQudsVgqI-ETXQB5PQjd7dzhz41-E0?usp=sharing) | [<code>Join WeChat 💬</code>](https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/wechat.md)
+#### [<code>Project Page 🚀</code>](https://ailab-cvc.github.io/VideoGen-Eval/) | [<code>Agent Evaluation Report 📝</code>](http://arxiv.org/abs/2503.23452) | [<code>Survey Report 📝</code>](http://arxiv.org/abs/2410.05227)  | [<code>Prompt 🎬</code>](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/prompt.html)  | [<code>Video Download 🤩</code>](https://drive.google.com/drive/folders/11WxQudsVgqI-ETXQB5PQjd7dzhz41-E0?usp=sharing) | [<code>Join WeChat 💬</code>](https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/wechat.md)
 
   <p align="center">
-    To observe and compare the video quality of recent video generative models!
+    <span class="author"><a href="https://yyvhang.github.io/" target="_blank">Yuhang Yang</a><sup>1</sup></span>,
+      <span class="author"><a href="https://scholar.google.com/citations?user=b_5HJmQAAAAJ&hl=zh-CN" target="_blank">Ke Fan</a><sup>2</sup></span>,
+      <span class="author"><a href="" target="_blank">Shangkun Sun</a><sup>3</sup></span>,
+      <span class="author"><a href="https://lihxxx.github.io/" target="_blank">Hongxiang Li</a><sup>3</sup></span>,
+      <span class="author"><a href="https://ailingzeng.site/" target="_blank">Ailing Zeng</a><sup>4,*</sup></span>,
+      <span class="author"><a href="https://feilinh.cn/" target="_blank">Feilin Han</a><sup>5</sup></span>, <br>
+      <span class="author"><a href="https://tiaotiao11-22.github.io/wzhai/" target="_blank">Wei Zhai</a><sup>1,*</sup></span>,
+      <span class="author"><a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ&hl=en" target="_blank">Wei Liu</a><sup>4</sup></span>,
+      <span class="author"><a href="https://scholar.google.com/citations?user=K7rTHNcAAAAJ&hl=zh-CN" target="_blank">Yang Cao</a><sup>1</sup></span>,
+      <span class="author"><a href="https://scholar.google.fr/citations?user=gDnBC1gAAAAJ&hl=en" target="_blank">Zheng-Jun Zha</a><sup>1</sup></span>
     <br />
-    <a href="https://ailingzeng.site/">Ailing Zeng<sup>1</sup><sup>*</sup></a>
-    ·
-    <a href="https://yyvhang.github.io/">Yuhang Yang<sup>2</sup><sup>*</sup></a>
-    ·
-    <a href="">Weidong Chen<sup>1</sup></a>
-    ·
-    <a href="https://scholar.google.com/citations?user=AjxoEpIAAAAJ&hl=en">Wei Liu<sup>1</sup></a>
-    <br />
-    <p> <sub><sup>1</sup> Tencent AI Lab, <sup>2</sup> USTC. *Equal contribution</sub></p>
+      <p><sup>1</sup>USTC, <sup>2</sup>SJTU, <sup>3</sup>PKUSZ, <sup>4</sup>Tencent, <sup>5</sup>BFA</p>
+      <p><sup>*</sup>Corresponding Author</p>
   </p>
 </div>
 
 
 
 ## 🔥 Project Updates
+- **News**: ```2025/3/31```: We propose an agent-based video generation evaluation, which is dynamic, flexible, and evolutionary.
 - **News**: ```2024/12/21```: We update results of [PramidalFlow](https://pyramid-flow.github.io/), please check our website.
 - **News**: ```2024/12/10```: We update results of [Sora](https://openai.com/sora/) and the comparison results of the latest 6 Sota models.
 - **News**: ```2024/12/04```: We update results of [Hunyuan](https://github.com/Tencent/HunyuanVideo), please check our website.
@@ -64,14 +70,9 @@
 ## 💡 About The Project 
 High-quality video generation, such as text-to-video (T2V), image-to-video (I2V), and video-to-video (V2V) generation, holds considerable significance in content creation and world simulation. Models like SORA have advanced generating videos with higher resolution, more natural motion, better vision-language alignment, and increased controllability, particularly for long video sequences. These improvements have been driven by the evolution of model architectures, shifting from UNet to more scalable and parameter-rich DiT models, along with large-scale data expansion and refined training strategies. However, despite the emergence of several DiT-based closed-source and open-source models, a comprehensive investigation into their capabilities and limitations still needs to be completed. Additionally, existing evaluation metrics often fail to align with human preferences.
 
-This report v1.0 studies a series of SORA-like T2V, I2V, and V2V models via to bridge the gap between academic research and industry practice and provide a more profound analysis of recent video generation advancements. This is achieved by demonstrating and comparing over 8,000 generated video cases from **ten closed-source and several open-source models** (Kling 1.0, Kling 1.5, Gen-3, Luma 1.0, Luma 1.6, Vidu, Qingying, MiniMax Hailuo, Tongyi Wanxiang, Pika1.5) via our 700 critical prompts. Seeing is believing. We encourage readers to visit our [Website](https://ailab-cvc.github.io/VideoGen-Eval/) to browse these results online. Our study systematically examines four core aspects: 
+This [survey report](http://arxiv.org/abs/2410.05227) studies a series of SORA-like T2V, I2V, and V2V models via to bridge the gap between academic research and industry practice and provide a more profound analysis of recent video generation advancements. This is achieved by demonstrating and comparing over 8,000 generated video cases from **ten closed-source and several open-source models** (Kling 1.0, Kling 1.5, Gen-3, Luma 1.0, Luma 1.6, Vidu, Qingying, MiniMax Hailuo, Tongyi Wanxiang, Pika1.5) via our 700 critical prompts. Seeing is believing. We encourage readers to visit our [Website](https://ailab-cvc.github.io/VideoGen-Eval/) to browse these results online. Our study systematically examines four core aspects:
 
-
-* Impacts on vertical-domain application models, such as human-centric animation and robotics;
-* Key objective capabilities, such as text alignment, motion diversity, composition, stability, etc.;
-* Video generation across ten real-life application scenarios;
-* In-depth discussions on potential usage scenarios and tasks, challenges, and future work.
-
+Our agent-based evaluation emphasizes a **flexible, scalable, and evolving** system to keep up with the rapid development of video generation
 
 We assign an ID to each case. The input text, the names of input images and videos correspond to the ID. The results generated by different models are named as `model_name+id.mp4`. Please refer to the [prompt](https://ailab-cvc.github.io/VideoGen-Eval/specifc_model/prompt.html). All the results are publicly accessible, and we will continuously update the results as new models are released and existing ones undergo version updates. 
 
@@ -101,8 +102,8 @@ results = load_prompt.get_prompts([id_list], 'test_model_name')
 ## 🦉 Job List
 
 - [x] VideoGen-Eval-1.0 released 
-- [x] Add results of Seaweed, PixVerse.
-- [ ] Make the arena for video generation models.
+- [x] Add results of multiple models.
+- [ ] Release the agent-based evaluation system.
 
 <!-- CONTRIBUTING -->
 ## 💗 Contributing
