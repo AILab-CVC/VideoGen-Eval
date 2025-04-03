@@ -41,12 +41,12 @@
 <body>
     <main>
         <h1>T2V prompts used in agent evaluation</h1>
-        <button id="downloadBtn"> <a href="https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/prompts/VideoGen-Eval_T2V.xlsx">Download</a></button>
+        <button id="downloadBtn"> <a href="https://github.com/AILab-CVC/VideoGen-Eval/blob/main/docs/specifc_model/prompts/VGenEval_T2V.xlsx">Download</a></button>
         <div id="excelData"></div>
     </main>
 
 <script>
-        fetch('./prompts.xlsx')
+        fetch('./VGenEval_T2V.xlsx')
             .then(response => response.arrayBuffer())
             .then(data => {
                 workbook = XLSX.read(data, {type: 'array'});
