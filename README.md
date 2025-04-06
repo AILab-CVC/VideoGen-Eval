@@ -143,6 +143,16 @@ Yuhang Yang - [yyuhang@mail.ustc.edu.cn](mailto:yyuhang@mail.ustc.edu.cn)
   year={2024}
 }
 ```
+
+```
+@article{yang2025videogen,
+  title={VideoGen-Eval: Agent-based System for Video Generation Evaluation},
+  author={Yang, Yuhang and Fan, Ke and Sun, Shangkun and Li, Hongxiang and Zeng, Ailing and Han, FeiLin and Zhai, Wei and Liu, Wei and Cao, Yang and Zha, Zheng-Jun},
+  journal={arXiv preprint arXiv:2503.23452},
+  year={2025}
+}
+```
+
 [contributors-shield]: https://img.shields.io/github/contributors/AILab-CVC/VideoGen-Eval.svg?style=for-the-badge
 [contributors-url]: https://github.com/AILab-CVC/VideoGen-Eval/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/AILab-CVC/VideoGen-Eval.svg?style=for-the-badge
