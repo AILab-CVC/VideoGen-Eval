@@ -103,7 +103,6 @@ results = load_prompt.get_prompts([id_list], 'test_model_name')
 
 - [x] VideoGen-Eval-1.0 released 
 - [x] Add results of multiple models.
-- [ ] Release the agent-based evaluation system.
 
 <!-- CONTRIBUTING -->
 ## 💗 Contributing
